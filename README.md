@@ -1,6 +1,6 @@
 # Customer Lab
 
-**Live:** https://customer-lab-fawn.vercel.app
+**View:** private Claude artifact — https://claude.ai/artifact/DiNgsHUyo7XYtEwjFiRcyY (internal; never deploy this publicly)
 
 Who our customers are, how they differ, what they're trying to get done, and which of those
 jobs our tools actually do — built only from what those people have said in public. Then a

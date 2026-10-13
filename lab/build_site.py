@@ -3,9 +3,11 @@
     .venv/bin/python lab/build_site.py
 
 Phone first (390 wide), decision first: what we didn't know, then the gaps, then the
-segments side by side with every line's verbatim source one tap away. Analytics: Vercel
-Web Analytics tag + the shared PostHog block (lab/posthog.html), both written here in the
-generator so a rebuild never drops them.
+segments side by side with every line's verbatim source one tap away.
+
+INTERNAL ONLY. Aidan, 2026-10-13: "we dont want this info public!" The page is published as
+a private Claude artifact (README), never deployed to Vercel, and carries no analytics.
+The output is artifact-ready: no doctype/html/head/body wrappers (the artifact adds them).
 
 Privacy: replies to our own emails are shown by role only ("Purchasing Manager, a public
 water utility"), never by name, and their source is labelled private.
@@ -54,23 +56,16 @@ def public(m):
 def main():
     maps = [public(json.load((MAPS / f"{p}.json").open())) for p in ORDER if (MAPS / f"{p}.json").exists()]
     data = {"maps": maps, "cal": calibration_rows()}
-    ph = (ROOT / "lab/posthog.html").read_text()
-    page = TEMPLATE.replace("__POSTHOG__", ph).replace(
+    page = TEMPLATE.replace(
         "__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     out = ROOT / "site/index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page)
-    (ROOT / "site/vercel.json").write_text(json.dumps({"buildCommand": "echo build", "outputDirectory": "."}))
     print(f"wrote {out.relative_to(ROOT)} ({len(page):,} bytes), {len(maps)} products")
 
 
-TEMPLATE = r"""<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Customer Lab</title>
+TEMPLATE = r"""<title>Customer Lab</title>
 <meta name="description" content="Who our customers are, how they differ, and what our tools do for them — built only from what they have said in public. Every line cites its source.">
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script><script defer src="/_vercel/insights/script.js"></script>
-__POSTHOG__
 <style>
 :root{--bg:#f6f4ef;--card:#fff;--ink:#1c1b19;--mute:#6b675f;--line:#e2ddd3;--accent:#1f5f8b;--gap:#b4441f;--ok:#2f7a4a;--quote:#f1ede4}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#151514;--card:#1f1e1c;--ink:#ece8e0;--mute:#a19c92;--line:#34322e;--accent:#79b4dc;--gap:#f08a64;--ok:#7cc79a;--quote:#2a2825}}
@@ -124,8 +119,8 @@ a{color:var(--accent)}
  .seg-card{flex:none}
  .gaps{grid-template-columns:1fr 1fr}
 }
-</style></head>
-<body><main>
+</style>
+<main>
 <h1>Customer Lab</h1>
 <p class="sub">Who our customers are and how they differ, built only from what they've said in public. Tap any <span class="c" style="cursor:default">1</span> for the exact words and the source.</p>
 <div class="tabs" role="tablist" id="tabs"></div>
@@ -184,7 +179,7 @@ C.buckets.map(b=>`<tr><td>${b.name}</td><td class="n">${b.n}</td><td class="n">$
 let start=0;try{start=+(localStorage.getItem('cl_tab')||0)}catch(e){}
 render(Math.min(start,D.maps.length-1));
 </script>
-</body></html>
+
 """
 
 if __name__ == "__main__":
