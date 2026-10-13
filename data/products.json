@@ -1,0 +1,35 @@
+{
+  "salon-rates": {
+    "name": "Salon Prices",
+    "live_url": "https://salon-rates.vercel.app",
+    "one_liner": "What everyone in your sector is charging for a given service.",
+    "dataset_products": ["salon-rates"],
+    "steps": [
+      {"id": "S1", "verb_object": "says whether your price for a service is high or low for your area (My shop)", "url": "https://salon-rates.vercel.app"},
+      {"id": "S2", "verb_object": "lists what shops near you charge for one service, filtered by size, stylist level and distance", "url": "https://salon-rates.vercel.app"}
+    ]
+  },
+  "pt-rates": {
+    "name": "PT Rates",
+    "live_url": "https://pt-rates.vercel.app",
+    "one_liner": "What everyone in your sector is charging for a given service.",
+    "dataset_products": ["pt-rates"],
+    "steps": [
+      {"id": "P1", "verb_object": "shows what BCBS MN, HealthPartners and UCare pay one clinic, code by code", "url": "https://pt-rates.vercel.app"},
+      {"id": "P2", "verb_object": "puts each code's rate next to the market median and the middle half of clinics", "url": "https://pt-rates.vercel.app"},
+      {"id": "P3", "verb_object": "lists the market median per billing code across Twin Cities clinics", "url": "https://pt-rates.vercel.app"}
+    ]
+  },
+  "obsolete-parts": {
+    "name": "Legacy Requests (obsolete parts)",
+    "live_url": "https://legacy-requests.vercel.app",
+    "one_liner": "Models demand from government RFPs. And supply from 3P vendors on places like ebay and online auction houses.",
+    "dataset_products": ["water-parts discovery", "legacy-requests", "parts concierge", "parts dealers ($500 buyer report)"],
+    "steps": [
+      {"id": "L1", "verb_object": "lists the makes and parts government agencies keep filing to buy, each linked to the agency's own filing", "url": "https://legacy-requests.vercel.app"},
+      {"id": "L2", "verb_object": "flags the same buyer asking for the same part number again, months or years apart", "url": "https://legacy-requests.vercel.app"},
+      {"id": "L3", "verb_object": "'Find it': links a part to listings for sale (eBay, GovDeals, PublicSurplus), its manual, and who services it", "url": "https://legacy-requests.vercel.app"},
+      {"id": "L4", "verb_object": "hands a dealer every agency that filed for a model the dealer has listed (/for/<token>/ pages)", "url": "https://legacy-requests.vercel.app"}
+    ]
+  }
+}
