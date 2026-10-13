@@ -1,4 +1,4 @@
-"""Pre-send screen: score ONE draft for ONE named recipient, and log the prediction BEFORE send.
+r"""Pre-send screen: score ONE draft for ONE named recipient, and log the prediction BEFORE send.
 
     .venv/bin/python lab/screen.py --product salon-rates --email bobbie@example.com \
         --kind "independent hairstylist" --org "BK Hair Co" \
@@ -50,7 +50,8 @@ def base_rate():
     if not rows:
         return None
     pos = sum(r["outcome"] == "positive_reply" for r in rows)
-    return len(rows), pos, sum(r["p_reply"] for r in rows) / len(rows)
+    return len(rows), pos, sum(r["p_reply"] for r in rows) / len(rows), [r["p_reply"] for r in rows], \
+        sum(r["outcome"] == "positive_reply" for r in sorted(rows, key=lambda r: -r["p_reply"])[:len(rows) // 10])
 
 
 def main():
@@ -87,9 +88,10 @@ def main():
     br = base_rate()
     print(f"{pid}  P(reply)={p_reply:.0%}  P(click)={p_click:.0%}  [{METHOD}]")
     if br:
-        n, pos, mean = br
-        print(f"context: {n} scored sends so far, {pos} positive ({pos/n:.1%}); "
-              f"mean predicted {mean:.1%}. Rank drafts against each other, not against 50%.")
+        n, pos, mean, ps, top = br
+        pct = sum(p < p_reply for p in ps) / n
+        print(f"ranks above {pct:.0%} of our {n} scored sends ({pos} replied; mean predicted {mean:.1%}). "
+              f"The top 10% so far held {top} of {pos} replies. Rank drafts against each other, not against 50%.")
     print("logged before send" if not a.dry else "dry run, not logged")
 
 

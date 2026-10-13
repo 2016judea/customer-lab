@@ -99,7 +99,30 @@ Product 1—n ToolStep · Product 1—n Segment · Segment 1—n Job/Pain/Workar
 every claim n—n Evidence · Job n—1 ToolStep via JobStep (null = gap) ·
 Segment 1—n Person · Person 1—n Draft · Draft 1—1 Prediction · Prediction 1—n Outcome.
 
-## Reality check
+## Reality check (2026-10-13, after the first pull)
 
-See the section appended below after the first data pull — written after this model, so
-the model is the fixed point it is measured against.
+Field by field, for the three products in the first slice. **Filled** = a source exists and
+the build fills it. **Partial** = fillable for some products or some rows. **Can't** = no
+source we can reach today.
+
+| entity.field | status | why |
+|---|---|---|
+| Product, ToolStep | filled | read off each live tool, step cites its URL |
+| Segment.name / who | filled | proposed by the model from evidence, each claim quote-checked |
+| Segment.how_many | **can't (yet)** | needs a register per segment (SDWIS for water systems, NPPES for PT clinics, licence lists for salons). Not pulled; a model may not guess it. The page shows only our own counts (menus read, sends made). |
+| Job / Pain / Workaround / Want / words | filled | Reddit, own menus, filings, replies to us; every kept line quotes its source verbatim |
+| Segment.vouchers (Channel) | **partial, thin** | people rarely say in public who they trust; most segments carry 0-1 evidenced voucher |
+| Segment.questions | partial | mostly hypothesis — only a few are in the evidence |
+| Evidence.verified | filled | substring check in `segment_map.py`; failures dropped and counted |
+| Evidence.speaker_kind | partial | Reddit speakers are often employees (PT clinicians, salon renters), not the owner who decides; labelled per row, never assumed |
+| Person.public_record | partial | exists as `recipient_context` in the send ledgers; not yet joined into Person rows |
+| Draft | partial | the screen hashes the body; drafts stay in each product's outreach folder |
+| Prediction | filled | 417 backfilled (scored blind, *after* the send) + every new screen, logged before send |
+| Outcome.replied | filled for email | Mail.app's local index of the Zoho inbox, exact sender address. LinkedIn/InMail replies **can't** be read. |
+| Outcome.delivered | **can't** | Mailgun's event log expires; only Zoho hard failures are visible |
+| Outcome.opened | **can't** | no open tracking, by design |
+| Outcome.visited | partial | PostHog per-recipient link, only for sends after 2026-10-12 (when PostHog went on) |
+
+The fields that fail (how_many, delivered, opened, most vouchers) do not change the thesis:
+the map still answers *who, how they differ, what they need, what our tool does*. how_many is
+the one to fill next, from registers, never from a model.
