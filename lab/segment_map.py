@@ -33,6 +33,9 @@ Live: {url}
 What the tool does today (tool steps):
 {steps}
 
+MEASURED FACTS (counted from data, safe to cite as numbers):
+{facts}
+
 EVIDENCE ROWS (id | speaker kind | source | text). These are the ONLY facts you may use.
 {rows}
 
@@ -46,13 +49,14 @@ TASK
    - "words": text = a phrase they use themselves (copy it), cite it.
    - "vouchers": who/what they already trust or ask (an association, a vendor, peers, a forum, a broker).
    - quotes must be copied character-for-character from the cited row. If you cannot cite it, leave it out.
+   - No quantities in claims ("most", "many", percentages, counts) unless copied from MEASURED FACTS.
    - Skip any list you can't evidence rather than padding it.
    - Someone's response to OUR offer (a decline, a forward, silence) is never a trait of theirs.
      Only what they said about their own work counts.
 3. questions: 2-4 questions this segment would ask a stranger offering this tool, each
    {{"text": ..., "cites": [...]}} if evidenced, else {{"text": ..., "hypothesis": true}}.
 4. job_map: for EVERY job of every segment: {{"segment": name, "job": job text, "step": "<step id or null>",
-   "fit": "full|partial|none", "why": "<one line>"}}. null/none = a GAP: a job our tool does not do.
+   "fit": "full|partial|none", "why": "<at most 15 words>"}}. null/none = a GAP: a job our tool does not do.
 5. surprise: the single finding in this evidence most likely to change what we build or say,
    one sentence, with cites.
 
@@ -118,12 +122,19 @@ def main():
     by_id = {r["id"]: r for r in rows}
     rows_txt = "\n".join(f"{r['id']} | {r['speaker_kind']} | {r['source_kind']} | {r['text'][:700]}" for r in rows)
     steps = "\n".join(f"{s['id']}: {s['verb_object']}" for s in P["steps"])
-    raw = claude(SONNET, SYSTEM, PROMPT.format(name=P["name"], one_liner=P["one_liner"], url=P["live_url"],
-                                               steps=steps, rows=rows_txt),
-                 max_tokens=12000, tag=f"segment_map:{a.product}")
+    prompt = PROMPT.format(name=P["name"], one_liner=P["one_liner"], url=P["live_url"], steps=steps, rows=rows_txt,
+                           facts="\n".join("- " + f["text"] for f in facts(a.product)))
     (ROOT / "data/raw").mkdir(parents=True, exist_ok=True)
-    (ROOT / f"data/raw/segment_map_{a.product}.txt").write_text(raw)
-    out = first_json(raw)
+    for attempt in range(3):  # a malformed JSON reply is retried, never hand-patched
+        raw = claude(SONNET, SYSTEM, prompt, max_tokens=20000, tag=f"segment_map:{a.product}")
+        (ROOT / f"data/raw/segment_map_{a.product}.txt").write_text(raw)
+        try:
+            out = first_json(raw)
+            break
+        except json.JSONDecodeError as e:
+            print(f"  attempt {attempt + 1}: bad JSON ({e}); retrying")
+    else:
+        sys.exit("no parseable JSON after 3 attempts")
 
     stats = collections.Counter()
     segs = []

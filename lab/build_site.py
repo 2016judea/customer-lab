@@ -163,8 +163,8 @@ function render(i){
     `</div><p class="hint">Swipe for the next kind of customer.</p></section>`;
   h+=`<section class="blk"><h2>Jobs our tool doesn't do · ${gaps.length} of ${m.job_map.length}</h2><div class="gaps">`+
     gaps.map(g=>`<div class="gap"><b>Gap</b> · ${esc(g.job)}<div class="seg">${esc(g.segment)} — ${esc(g.why)}</div></div>`).join('')+
-    part.map(g=>`<div class="gap"><b style="color:var(--accent)">Partly</b> · ${esc(g.job)}<div class="seg">${esc(g.segment)} — step ${esc(g.step)}: ${esc(g.why)}</div></div>`).join('')+
-    `</div></section>`;
+    `</div>`+(part.length?`<details class="blk"><summary class="hint" style="cursor:pointer;min-height:44px;display:flex;align-items:center">${part.length} more jobs it does only partly</summary><div class="gaps">`:'')+part.map(g=>`<div class="gap"><b style="color:var(--accent)">Partly</b> · ${esc(g.job)}<div class="seg">${esc(g.segment)} — step ${esc(g.step)}: ${esc(g.why)}</div></div>`).join('')+
+    (part.length?`</div></details>`:'')+`</section>`;
   h+=`<section class="blk"><h2>Measured, not modelled</h2><ul class="facts">`+m.facts.map(f=>`<li>${esc(f.text)} <span class="hint">(${esc(f.source)})</span></li>`).join('')+`</ul></section>`;
   document.getElementById('view').innerHTML=h;
   const v=m.verification;

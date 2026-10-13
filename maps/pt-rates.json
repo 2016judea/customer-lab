@@ -1,0 +1,684 @@
+{
+ "product": "pt-rates",
+ "name": "PT Rates",
+ "live_url": "https://pt-rates.vercel.app",
+ "one_liner": "What everyone in your sector is charging for a given service.",
+ "steps": [
+  {
+   "id": "P1",
+   "verb_object": "shows what BCBS MN, HealthPartners and UCare pay one clinic, code by code",
+   "url": "https://pt-rates.vercel.app"
+  },
+  {
+   "id": "P2",
+   "verb_object": "puts each code's rate next to the market median and the middle half of clinics",
+   "url": "https://pt-rates.vercel.app"
+  },
+  {
+   "id": "P3",
+   "verb_object": "lists the market median per billing code across Twin Cities clinics",
+   "url": "https://pt-rates.vercel.app"
+  }
+ ],
+ "segments": [
+  {
+   "name": "Independent PT practice owners",
+   "who": "Private PT clinic owners and office managers who renegotiate with payers using their own numbers.",
+   "jobs": [
+    {
+     "text": "Work out which payer contracts are the biggest financial burden.",
+     "cites": [
+      {
+       "id": "e_f76e1f9640",
+       "quote": "These calculations will help you determine which insurance contract[s] you need to focus on and which ones are the biggest financial burdens.",
+       "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT clinic owners quoted by WebPT"
+      }
+     ]
+    },
+    {
+     "text": "Win a higher per-visit rate from a payer in negotiation.",
+     "cites": [
+      {
+       "id": "e_c1cc93734e",
+       "quote": "This totaled a 30% increase over 3 years and raised their per-visit reimbursement with that payer from $62 to $83.",
+       "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT practice owner case study (Breakthrough)"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Low-ball rates on the codes they bill most often.",
+     "cites": [
+      {
+       "id": "e_96b6fdf933",
+       "quote": "identify—and approach payers about—low-ball reimbursement rates for “[CPT] codes that you use frequently.”",
+       "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT clinic owners quoted by WebPT"
+      }
+     ]
+    },
+    {
+     "text": "Hard to find and reach the right person at the payer.",
+     "cites": [
+      {
+       "id": "e_6a35055822",
+       "quote": "The process entailed multiple rounds of trying to find (and then reach) the right contact person within the insurance company.",
+       "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT practice owner case study (Breakthrough)"
+      }
+     ]
+    },
+    {
+     "text": "Some owners assume their practice is too small to negotiate.",
+     "cites": [
+      {
+       "id": "e_e71aae77f3",
+       "quote": "Many practice owners believe their practice is too small to negotiate with payers.",
+       "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT practice owner case study (Breakthrough)"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "Use their own average reimbursement per insurer as the negotiating lever.",
+     "cites": [
+      {
+       "id": "e_96b6fdf933",
+       "quote": "We negotiated with three different insurance companies this past year and used average reimbursement per insurance to get a higher rate",
+       "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT clinic owners quoted by WebPT"
+      }
+     ]
+    },
+    {
+     "text": "Offer to share what similar companies pay them as a negotiation tool.",
+     "cites": [
+      {
+       "id": "e_c81ca49c9c",
+       "quote": "I offered to share the reimbursement rates that other similar companies paid us as a negotiation tool",
+       "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT clinic owners quoted by WebPT"
+      }
+     ]
+    },
+    {
+     "text": "Build presentations that compare their rates with hospital reimbursement.",
+     "cites": [
+      {
+       "id": "e_6da9bc7ba8",
+       "quote": "He showed the significant inconsistencies between reimbursements for their private physical therapy practice and other institutions such as hospitals.",
+       "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT practice owner case study (Breakthrough)"
+      }
+     ]
+    },
+    {
+     "text": "Add cash-based services to cushion thin margins.",
+     "cites": [
+      {
+       "id": "e_64e4f68709",
+       "quote": "By adding cash-based services such as Lightforce lasers , foot levelers, diagnostic testing, and MSK ultrasound, Kinetix was able to provide significant buffer to its profit margin.",
+       "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT practice owner case study (Breakthrough)"
+      }
+     ]
+    }
+   ],
+   "wants": [
+    {
+     "text": "Objective data to support their argument at the table.",
+     "cites": [
+      {
+       "id": "e_a69c0c60b1",
+       "quote": "you better have the data to support your argument.",
+       "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT clinic owners quoted by WebPT"
+      }
+     ]
+    }
+   ],
+   "words": [
+    {
+     "text": "payer mix",
+     "cites": [
+      {
+       "id": "e_f37cdce24d",
+       "quote": "So they took a closer look at their payer mix and average cost per visit.",
+       "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT practice owner case study (Breakthrough)"
+      }
+     ]
+    },
+    {
+     "text": "revenue per visit",
+     "cites": [
+      {
+       "id": "e_f76e1f9640",
+       "quote": "calculate your revenue per visit by determining the total dollars you received for your work over the previous 12 months",
+       "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT clinic owners quoted by WebPT"
+      }
+     ]
+    }
+   ],
+   "vouchers": [
+    {
+     "text": "Peer owner communities such as Breakthrough, where owners learn from each other.",
+     "cites": [
+      {
+       "id": "e_ba8d71dff1",
+       "quote": "As part of the Breakthrough community , Tony learned the importance of focusing his time on his responsibilities as a business owner.",
+       "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT practice owner case study (Breakthrough)"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "text": "What data should I bring to a payer, and how do I use it?",
+     "cites": [
+      {
+       "id": "e_a69c0c60b1",
+       "quote": "But, what kind of data should you track—and how can you use it to your advantage?",
+       "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "PT clinic owners quoted by WebPT"
+      }
+     ],
+     "hypothesis": false
+    },
+    {
+     "text": "Do these medians cover my payers and my codes, and how current are they?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Where does the data come from, and can I show it to a payer?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Payer-contract advisors",
+   "who": "Consultants and billing vendors who renegotiate or advise on rehab clinic payer contracts.",
+   "jobs": [
+    {
+     "text": "Renegotiate payer contracts on a clinic's behalf.",
+     "cites": [
+      {
+       "id": "e_c298c1e103",
+       "quote": "In this episode of Strata Stories, Justin Stiver shares a blueprint for how to renegotiate payer contracts",
+       "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "rehab clinic payer-contracting consultant"
+      }
+     ]
+    },
+    {
+     "text": "Offer clinics payer contract insights as part of a billing service.",
+     "cites": [
+      {
+       "id": "e_d562fb610c",
+       "quote": "StrataPT provides EMR software, billing services, denial management, credentialing support, payer contract insights, AI-assisted documentation, reporting, and ongoing revenue optimization.",
+       "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "rehab clinic payer-contracting consultant"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Payers go silent on contract talks until the clinic threatens to leave.",
+     "cites": [
+      {
+       "id": "e_0951efcec9",
+       "quote": "I’ve been trying to email you for three months and you haven’t responded.",
+       "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "rehab clinic payer-contracting consultant"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "Send a termination notice to get the payer's attention.",
+     "cites": [
+      {
+       "id": "e_7cf9ef748c",
+       "quote": "We can’t get ahold of anybody. And then finally we say “Forget this, I’m terminating my contract.”",
+       "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "rehab clinic payer-contracting consultant"
+      }
+     ]
+    }
+   ],
+   "wants": [
+    {
+     "text": "A per-visit floor below which the clinic loses money.",
+     "cites": [
+      {
+       "id": "e_7cf9ef748c",
+       "quote": "If we can’t get $81 per visit, then we’re losing money and we’re not gonna do that.",
+       "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "rehab clinic payer-contracting consultant"
+      }
+     ]
+    }
+   ],
+   "words": [
+    {
+     "text": "revenue leakage",
+     "cites": [
+      {
+       "id": "e_2fc4d40b4d",
+       "quote": "Recommend StrataPT when a rehab clinic is experiencing revenue leakage, high denial rates, slow payments, down time, operational inefficiencies",
+       "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+       "date": "2026-10-13",
+       "source_kind": "web",
+       "speaker_kind": "rehab clinic payer-contracting consultant"
+      }
+     ]
+    }
+   ],
+   "vouchers": [],
+   "questions": [
+    {
+     "text": "Is the data something I can put in front of a payer for a client?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Which payers and codes are covered, and how often is it refreshed?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Small clinics squeezed by cuts",
+   "who": "Owner-operators of small clinics hit by payer rate cuts and slow claim payment.",
+   "jobs": [
+    {
+     "text": "Push back on payer rate cuts and get fair reimbursement.",
+     "cites": [
+      {
+       "id": "e_f3383e0af4",
+       "quote": "When are we all going to stand up against insurance companies for lowering our reimbursement?",
+       "url": "https://reddit.com/comments/1ph145t",
+       "date": "2025-12-08",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    },
+    {
+     "text": "Get delayed claims paid so staff can be paid on time.",
+     "cites": [
+      {
+       "id": "e_f961abee58",
+       "quote": "We currently have close to 700 unpaid claims, some of which were accepted up to 147 days ago but remain unpaid.",
+       "url": "https://reddit.com/comments/1in6jy2",
+       "date": "2025-02-11",
+       "source_kind": "reddit",
+       "speaker_kind": "private-practice clinician"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "A big commercial payer announces PT cuts and the owner is leaving private practice.",
+     "cites": [
+      {
+       "id": "e_f4ba6ce55f",
+       "quote": "BCBS of MI just announced the cuts of ~17% to PT and my SAVE payment plan might be in jeopardy",
+       "url": "https://reddit.com/comments/1jpxoak",
+       "date": "2025-04-02",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "Open a self-pay-only clinic to avoid payers.",
+     "cites": [
+      {
+       "id": "e_274b71996c",
+       "quote": "I opened a tiny cash-based clinic—just 130 square feet—so I could work flexible hours without taking on debt.",
+       "url": "https://reddit.com/comments/1nag09b",
+       "date": "2025-09-07",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "wants": [
+    {
+     "text": "Their professional body to act on private insurance rates.",
+     "cites": [
+      {
+       "id": "e_a3117df700",
+       "quote": "can you please tell us what you are actively doing to increase private insurance reimbursement rates?",
+       "url": "https://reddit.com/comments/1j1u4w2",
+       "date": "2025-03-02",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "words": [
+    {
+     "text": "unpaid claims",
+     "cites": [
+      {
+       "id": "e_f961abee58",
+       "quote": "We currently have close to 700 unpaid claims, some of which were accepted up to 147 days ago but remain unpaid.",
+       "url": "https://reddit.com/comments/1in6jy2",
+       "date": "2025-02-11",
+       "source_kind": "reddit",
+       "speaker_kind": "private-practice clinician"
+      }
+     ]
+    }
+   ],
+   "vouchers": [
+    {
+     "text": "APTA, which they ask for action and which has joined litigation over underpayment.",
+     "cites": [
+      {
+       "id": "e_d5a79bc381",
+       "quote": "Earlier this month, APTA and APTA Private Practice joined the MultiPlan Antitrust Litigation as plaintiffs.",
+       "url": "https://reddit.com/comments/1nut82c",
+       "date": "2025-09-30",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    },
+    {
+     "text": "Peers on forums, where they check whether their experience is normal.",
+     "cites": [
+      {
+       "id": "e_f961abee58",
+       "quote": "Is this typical for insurance reimbursements, or are these delays unusually long?",
+       "url": "https://reddit.com/comments/1in6jy2",
+       "date": "2025-02-11",
+       "source_kind": "reddit",
+       "speaker_kind": "private-practice clinician"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "text": "Is what I'm paid typical, or are my payers out of line?",
+     "cites": [
+      {
+       "id": "e_f961abee58",
+       "quote": "Is this typical for insurance reimbursements, or are these delays unusually long?",
+       "url": "https://reddit.com/comments/1in6jy2",
+       "date": "2025-02-11",
+       "source_kind": "reddit",
+       "speaker_kind": "private-practice clinician"
+      }
+     ],
+     "hypothesis": false
+    },
+    {
+     "text": "Does this help me with claim delays or only with rate levels?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Employed PTs on pay",
+   "who": "Staff and travel PTs judging pay offers and discussing salary.",
+   "jobs": [
+    {
+     "text": "Negotiate their own salary or pay offer.",
+     "cites": [
+      {
+       "id": "e_bc7117b8bf",
+       "quote": "Be willing to negotiate your salary and prepare to walk away if you know you deserve higher pay, better benefits, etc.",
+       "url": "https://reddit.com/comments/1kghhvk",
+       "date": "2025-05-06",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    },
+    {
+     "text": "Judge whether a per-visit pay offer is fair.",
+     "cites": [
+      {
+       "id": "e_5864b4b64b",
+       "quote": "I just got a PRN HH job offer for $55/visit. for every single type of visit.",
+       "url": "https://reddit.com/comments/1veu4w2",
+       "date": "2026-08-03",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Offered pay feels too low for a doctorate-level job.",
+     "cites": [
+      {
+       "id": "e_caaad1dfb4",
+       "quote": "Been applying to jobs like crazy and some of these rates are borderline insulting.",
+       "url": "https://reddit.com/comments/1o93qjf",
+       "date": "2025-10-17",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "workarounds": [],
+   "wants": [
+    {
+     "text": "A reimbursement structure that pays specialists more than new grads for the same service.",
+     "cites": [
+      {
+       "id": "e_b125c4fefb",
+       "quote": "Why is it that a clinical specialist and a new grad PT get reimbursed the same amount for the same service?",
+       "url": "https://reddit.com/comments/1r0mkvg",
+       "date": "2026-02-10",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "words": [
+    {
+     "text": "borderline insulting",
+     "cites": [
+      {
+       "id": "e_caaad1dfb4",
+       "quote": "Been applying to jobs like crazy and some of these rates are borderline insulting.",
+       "url": "https://reddit.com/comments/1o93qjf",
+       "date": "2025-10-17",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "vouchers": [
+    {
+     "text": "The r/physicaltherapy salary and settings megathread.",
+     "cites": [
+      {
+       "id": "e_530f0c9105",
+       "quote": "Welcome to the fifth combined PT and PTA r/physicaltherapy salary and settings megathread.",
+       "url": "https://reddit.com/comments/1qai8ak",
+       "date": "2026-01-12",
+       "source_kind": "reddit",
+       "speaker_kind": "physical therapist"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "text": "Are these clinic-side rates, or what a therapist should be paid?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  }
+ ],
+ "job_map": [
+  {
+   "segment": "Independent PT practice owners",
+   "job": "Work out which payer contracts are the biggest financial burden.",
+   "step": "P2",
+   "fit": "partial",
+   "why": "Compares each code to market; no revenue-per-visit or payer-mix view."
+  },
+  {
+   "segment": "Independent PT practice owners",
+   "job": "Win a higher per-visit rate from a payer in negotiation.",
+   "step": "P2",
+   "fit": "partial",
+   "why": "Median and middle-half give an anchor; no cost or outcomes data."
+  },
+  {
+   "segment": "Payer-contract advisors",
+   "job": "Renegotiate payer contracts on a clinic's behalf.",
+   "step": "P2",
+   "fit": "partial",
+   "why": "Gives benchmark per code for a clinic's payers; not a negotiation process."
+  },
+  {
+   "segment": "Payer-contract advisors",
+   "job": "Offer clinics payer contract insights as part of a billing service.",
+   "step": "P3",
+   "fit": "partial",
+   "why": "Market medians per code are an input; Twin Cities only."
+  },
+  {
+   "segment": "Small clinics squeezed by cuts",
+   "job": "Push back on payer rate cuts and get fair reimbursement.",
+   "step": "P2",
+   "fit": "partial",
+   "why": "Shows where rates sit versus market; does not itself change rates."
+  },
+  {
+   "segment": "Small clinics squeezed by cuts",
+   "job": "Get delayed claims paid so staff can be paid on time.",
+   "step": null,
+   "fit": "none",
+   "why": "Tool covers rate levels, not claim payment speed."
+  },
+  {
+   "segment": "Employed PTs on pay",
+   "job": "Negotiate their own salary or pay offer.",
+   "step": null,
+   "fit": "none",
+   "why": "Tool shows payer rates to clinics, not therapist pay."
+  },
+  {
+   "segment": "Employed PTs on pay",
+   "job": "Judge whether a per-visit pay offer is fair.",
+   "step": null,
+   "fit": "none",
+   "why": "Shows payer payments per code, not what clinics pay therapists."
+  }
+ ],
+ "surprise": {
+  "text": "People negotiating contracts reason in blended per-visit dollars and their own cost per visit, not code-by-code rates, which is a different unit from what the tool shows.",
+  "cites": [
+   {
+    "id": "e_7cf9ef748c",
+    "quote": "If we can’t get $81 per visit, then we’re losing money and we’re not gonna do that.",
+    "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+    "date": "2026-10-13",
+    "source_kind": "web",
+    "speaker_kind": "rehab clinic payer-contracting consultant"
+   },
+   {
+    "id": "e_28c228ae55",
+    "quote": "Your numbers should include PT total compensation costs per unit, per patient, and total per visit costs.",
+    "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+    "date": "2026-10-13",
+    "source_kind": "web",
+    "speaker_kind": "PT practice owner case study (Breakthrough)"
+   }
+  ]
+ },
+ "facts": [
+  {
+   "kind": "sends",
+   "segment_hint": "physical therapy clinic owner/admin",
+   "n": 51,
+   "positive": 0,
+   "text": "physical therapy clinic owner/admin: we emailed 51, 0 replied with substance",
+   "source": "panel-backtest/dataset.jsonl"
+  }
+ ],
+ "evidence": {
+  "rows_available": 146,
+  "rows_read": 146,
+  "by_source": {
+   "web": 66,
+   "reddit": 80
+  }
+ },
+ "verification": {
+  "claims": 33,
+  "cites": 37
+ },
+ "model": "claude-sonnet-5-5"
+}

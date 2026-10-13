@@ -189,12 +189,13 @@ def from_filings():
 
 def from_our_replies():
     md = (PARTS / "outreach/README.md").read_text()
-    out = []
+    out, roles = [], {}
     for line in md.splitlines():
         m = re.match(r"\| (\d+/\d+) \| \*\*([^*]+)\*\*, ([^|]+?) \| \"(.+?)\"", line)
         if m:
             date, _name, who, said = m.groups()
-            role = who.split(",")[0].strip()
+            last = _name.split()[-1]
+            role = roles.setdefault(last, who.split(",")[0].strip())  # follow-ups reuse the first role
             out.append(row(said, "private: the-google-of-obsolete-infrastructure-parts/outreach/README.md",
                            "2026-" + date.replace("/", "-").zfill(5), "our_reply",
                            f"{role}, a public water utility (reply to us)"))

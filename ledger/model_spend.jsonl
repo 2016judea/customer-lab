@@ -1,1 +1,15 @@
 {"tag": "segment_map:obsolete-parts", "model": "claude-sonnet-5-5", "in": 8200, "out": 9709, "usd": 0.17023}
+{"tag": "screen", "model": "claude-sonnet-5-5", "in": 448, "out": 24, "usd": 0.0017}
+{"tag": "screen", "model": "claude-sonnet-5-5", "in": 448, "out": 24, "usd": 0.0017}
+{"tag": "screen", "model": "claude-sonnet-5-5", "in": 411, "out": 24, "usd": 0.00159}
+{"tag": "segment_map:salon-rates", "model": "claude-sonnet-5-5", "in": 38165, "out": 10815, "usd": 0.27672}
+{"tag": "segment_map:pt-rates", "model": "claude-sonnet-5-5", "in": 25837, "out": 12000, "usd": 0.25751}
+{"tag": "segment_map:obsolete-parts", "model": "claude-sonnet-5-5", "in": 37847, "out": 12000, "usd": 0.29354}
+{"tag": "segment_map:pt-rates", "model": "claude-sonnet-5-5", "in": 25837, "out": 12000, "usd": 0.25751}
+{"tag": "segment_map:pt-rates", "model": "claude-sonnet-5-5", "in": 25837, "out": 9229, "usd": 0.21595}
+{"tag": "segment_map:obsolete-parts", "model": "claude-sonnet-5-5", "in": 37847, "out": 12000, "usd": 0.29354}
+{"tag": "segment_map:obsolete-parts", "model": "claude-sonnet-5-5", "in": 37847, "out": 12000, "usd": 0.29354}
+{"tag": "segment_map:obsolete-parts", "model": "claude-sonnet-5-5", "in": 37851, "out": 11709, "usd": 0.28919}
+{"tag": "segment_map:pt-rates", "model": "claude-sonnet-5-5", "in": 25937, "out": 11791, "usd": 0.25468}
+{"tag": "segment_map:obsolete-parts", "model": "claude-sonnet-5-5", "in": 38183, "out": 11860, "usd": 0.29245}
+{"tag": "segment_map:salon-rates", "model": "claude-sonnet-5-5", "in": 38629, "out": 13139, "usd": 0.31297}

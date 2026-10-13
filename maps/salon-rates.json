@@ -1,0 +1,841 @@
+{
+ "product": "salon-rates",
+ "name": "Salon Prices",
+ "live_url": "https://salon-rates.vercel.app",
+ "one_liner": "What everyone in your sector is charging for a given service.",
+ "steps": [
+  {
+   "id": "S1",
+   "verb_object": "says whether your price for a service is high or low for your area (My shop)",
+   "url": "https://salon-rates.vercel.app"
+  },
+  {
+   "id": "S2",
+   "verb_object": "lists what shops near you charge for one service, filtered by size, stylist level and distance",
+   "url": "https://salon-rates.vercel.app"
+  }
+ ],
+ "segments": [
+  {
+   "name": "New solo stylists",
+   "who": "Stylists who just went independent or moved to a new market and have to build a price list from scratch.",
+   "jobs": [
+    {
+     "text": "Set first prices for color services after leaving a larger salon",
+     "cites": [
+      {
+       "id": "e_ad16004a23",
+       "quote": "I am kind of lost on how I should price color services specifically.",
+       "url": "https://reddit.com/comments/1m01dxf",
+       "date": "2025-07-14",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    },
+    {
+     "text": "Work out what to charge for a specific vivid-color service in a new salon",
+     "cites": [
+      {
+       "id": "e_3ad17a4276",
+       "quote": "How much do you guys typically add on per vivid color?",
+       "url": "https://reddit.com/comments/1v20df6",
+       "date": "2026-07-20",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    },
+    {
+     "text": "Set medium-range prices that attract new clients without looking like discount pricing",
+     "cites": [
+      {
+       "id": "e_ae631022fc",
+       "quote": "I’m aiming for medium-range pricing — not discount-level, but still attractive to new clients while I build my name in the city.",
+       "url": "https://reddit.com/comments/1mnsdrm",
+       "date": "2025-08-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Unsure how to price color, and a school-salon price does not carry over to a real salon",
+     "cites": [
+      {
+       "id": "e_3ad17a4276",
+       "quote": "I’m having a hard time pricing this for doing at my salon. How much do you guys typically add on per vivid color?",
+       "url": "https://reddit.com/comments/1v20df6",
+       "date": "2026-07-20",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    },
+    {
+     "text": "Starting in a new city with no client base to calibrate against",
+     "cites": [
+      {
+       "id": "e_ae631022fc",
+       "quote": "starting fresh here with almost no existing clients",
+       "url": "https://reddit.com/comments/1mnsdrm",
+       "date": "2025-08-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "Post a draft price list on Reddit and ask local stylists if it looks reasonable",
+     "cites": [
+      {
+       "id": "e_ae631022fc",
+       "quote": "For those who work in or know the Canadian market — do these seem reasonable?",
+       "url": "https://reddit.com/comments/1mnsdrm",
+       "date": "2025-08-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    },
+    {
+     "text": "Build an all-inclusive price list and ask peers what they think",
+     "cites": [
+      {
+       "id": "e_fbc938517e",
+       "quote": "I put together all inclusive pricing list but I’m wondering what feedback you guys have on this idea.",
+       "url": "https://reddit.com/comments/1v44qhj",
+       "date": "2026-07-23",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "wants": [
+    {
+     "text": "Prices that sit in the middle of the local market",
+     "cites": [
+      {
+       "id": "e_ae631022fc",
+       "quote": "I’m aiming for medium-range pricing — not discount-level, but still attractive to new clients while I build my name in the city.",
+       "url": "https://reddit.com/comments/1mnsdrm",
+       "date": "2025-08-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "words": [
+    {
+     "text": "add on per vivid color",
+     "cites": [
+      {
+       "id": "e_3ad17a4276",
+       "quote": "How much do you guys typically add on per vivid color?",
+       "url": "https://reddit.com/comments/1v20df6",
+       "date": "2026-07-20",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "vouchers": [
+    {
+     "text": "Fellow stylists on Reddit, especially ones who know the local market",
+     "cites": [
+      {
+       "id": "e_ae631022fc",
+       "quote": "Hey fellow stylists, I’ve just moved to Calgary, AB and I’m starting fresh here with almost no existing clients.",
+       "url": "https://reddit.com/comments/1mnsdrm",
+       "date": "2025-08-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "text": "Does it cover my city and the specific color services I offer?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Where do these prices come from, and how recent are they?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Stylists facing price pushback",
+   "who": "Established stylists whose clients haggle over or resist their prices and who wonder whether they are out of line locally.",
+   "jobs": [
+    {
+     "text": "Hold prices when a client haggles",
+     "cites": [
+      {
+       "id": "e_91f1be5f85",
+       "quote": "I quoted a partial highlight at $95-120",
+       "url": "https://reddit.com/comments/1hq32ie",
+       "date": "2024-12-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    },
+    {
+     "text": "Roll out a price increase to long-time clients",
+     "cites": [
+      {
+       "id": "e_0c7839560c",
+       "quote": "I recently raised my prices $5. When I told her, she was more upset than most of my clients.",
+       "url": "https://reddit.com/comments/1me62n1",
+       "date": "2025-07-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    },
+    {
+     "text": "Know what nearby salons charge",
+     "cites": [
+      {
+       "id": "e_0c7839560c",
+       "quote": "but i dont think any of the surrounding salons are as inexpensive as me even with my new pricing.",
+       "url": "https://reddit.com/comments/1me62n1",
+       "date": "2025-07-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Haggling leaves them doubting themselves even when they believe the work is worth more",
+     "cites": [
+      {
+       "id": "e_91f1be5f85",
+       "quote": "I know my work is worth more than I'm charging, yet I'm still feeling like I did something wrong.",
+       "url": "https://reddit.com/comments/1hq32ie",
+       "date": "2024-12-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    },
+    {
+     "text": "Clients complain that final costs are inconsistent with the base price",
+     "cites": [
+      {
+       "id": "e_41cb5c1dbf",
+       "quote": "so we have had an influx of guests complain about how costs are",
+       "url": "https://reddit.com/comments/1q2cpnx",
+       "date": "2026-01-02",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "Lower the quoted range on the spot to keep the client",
+     "cites": [
+      {
+       "id": "e_91f1be5f85",
+       "quote": "so I lowered the range to $75-95",
+       "url": "https://reddit.com/comments/1hq32ie",
+       "date": "2024-12-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    },
+    {
+     "text": "Quietly give a loyal client the old price",
+     "cites": [
+      {
+       "id": "e_0c7839560c",
+       "quote": "i told her to give me the old price for that.",
+       "url": "https://reddit.com/comments/1me62n1",
+       "date": "2025-07-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "wants": [
+    {
+     "text": "Honest, location-aware price talk instead of brag threads",
+     "cites": [
+      {
+       "id": "e_22fa222105",
+       "quote": "It needs to be more transparent and honest about LOCATION.",
+       "url": "https://reddit.com/comments/1uv9lnq",
+       "date": "2026-07-13",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "words": [
+    {
+     "text": "haggled about pricing",
+     "cites": [
+      {
+       "id": "e_91f1be5f85",
+       "quote": "tired of being haggled about pricing. I try to be fair and I know my work",
+       "url": "https://reddit.com/comments/1hq32ie",
+       "date": "2024-12-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "vouchers": [
+    {
+     "text": "Other stylists on Reddit, checking whether others in similar areas see the same thing",
+     "cites": [
+      {
+       "id": "e_91f1be5f85",
+       "quote": "just wondering if anyone else is dealing with something similar?",
+       "url": "https://reddit.com/comments/1hq32ie",
+       "date": "2024-12-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "text": "Is the local range really lower where I live (rural, small town)?",
+     "cites": [
+      {
+       "id": "e_91f1be5f85",
+       "quote": "I live in a very rural part of NC, just wondering if anyone else is dealing with something similar?",
+       "url": "https://reddit.com/comments/1hq32ie",
+       "date": "2024-12-31",
+       "source_kind": "reddit",
+       "speaker_kind": "stylist"
+      }
+     ],
+     "hypothesis": false
+    },
+    {
+     "text": "Can I show a client what other shops nearby charge?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Estheticians pricing services",
+   "who": "Estheticians (waxing, facials) setting or revising menu prices, including moving to no-tip pricing.",
+   "jobs": [
+    {
+     "text": "Check whether own wax prices are high for the area",
+     "cites": [
+      {
+       "id": "e_ee45f42d21",
+       "quote": "Even though I live in a more wealthy area, do you think this is high?",
+       "url": "https://reddit.com/comments/1t7dd41",
+       "date": "2026-05-08",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    },
+    {
+     "text": "Build a new menu without pricing mistakes",
+     "cites": [
+      {
+       "id": "e_ec8cd5f15f",
+       "quote": "What menu pricing mistakes should I avoid while creating a new menu for my services as an esthetician?",
+       "url": "https://reddit.com/comments/1hkm3wg",
+       "date": "2024-12-23",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    },
+    {
+     "text": "Move to no-tip pricing and stay within range of nearby competitors",
+     "cites": [
+      {
+       "id": "e_2b1daa73f5",
+       "quote": "Are your prices noticeable higher than nearby competitors?",
+       "url": "https://reddit.com/comments/1jtq1o0",
+       "date": "2025-04-07",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Feeling guilty about charging, unsure if the list is right",
+     "cites": [
+      {
+       "id": "e_12efeddf77",
+       "quote": "how to charge without feeling bad lol is this a good price list?",
+       "url": "https://reddit.com/comments/1pfbkzh",
+       "date": "2025-12-06",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    },
+    {
+     "text": "Employed estheticians see their spa priced well above competitors and business stays slow",
+     "cites": [
+      {
+       "id": "e_151a8ed59a",
+       "quote": "our prices are insane to me, and we are way more than our competitors.",
+       "url": "https://reddit.com/comments/1k7klek",
+       "date": "2025-04-25",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    },
+    {
+     "text": "Afraid to drop tips and raise prices",
+     "cites": [
+      {
+       "id": "e_798fed3043",
+       "quote": "I want to stop accepting tips and raise my pricing",
+       "url": "https://reddit.com/comments/1isw6xw",
+       "date": "2025-02-19",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "Ask peers online to look over their price list",
+     "cites": [
+      {
+       "id": "e_e5f847cc71",
+       "quote": "Could anyone take a look at my pricing and give me some honest feedback about what you would charge?",
+       "url": "https://reddit.com/comments/1q3usl9",
+       "date": "2026-01-04",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    },
+    {
+     "text": "Ask other estheticians what they charge for one service",
+     "cites": [
+      {
+       "id": "e_ee45f42d21",
+       "quote": "How much do you charge for a full leg wax and Brazilian (sugar or wax)?",
+       "url": "https://reddit.com/comments/1t7dd41",
+       "date": "2026-05-08",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    }
+   ],
+   "wants": [
+    {
+     "text": "A no-tipping model with higher prices",
+     "cites": [
+      {
+       "id": "e_2b1daa73f5",
+       "quote": "Really leaning toward a no tipping model with higher prices.",
+       "url": "https://reddit.com/comments/1jtq1o0",
+       "date": "2025-04-07",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    }
+   ],
+   "words": [
+    {
+     "text": "esti besties",
+     "cites": [
+      {
+       "id": "e_1b038cbc6a",
+       "quote": "Hey esti besties! We currently include dermaplaning, enzyme, or level 1 peels in all our custom facials",
+       "url": "https://reddit.com/comments/1kogl5c",
+       "date": "2025-05-17",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    }
+   ],
+   "vouchers": [
+    {
+     "text": "Other estheticians on Reddit, who they compare against local peers",
+     "cites": [
+      {
+       "id": "e_ee45f42d21",
+       "quote": "some people around me will charge $55 for a brazilian",
+       "url": "https://reddit.com/comments/1t7dd41",
+       "date": "2026-05-08",
+       "source_kind": "reddit",
+       "speaker_kind": "esthetician"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "text": "Do these prices include tips or not?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Does it cover waxing and facials, not just hair?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Braiding and loc stylists",
+   "who": "Braiders and loc specialists whose menus quote ranges or starting prices that depend on size, length and hair.",
+   "jobs": [
+    {
+     "text": "Quote by size and length instead of one flat price",
+     "cites": [
+      {
+       "id": "e_9dd56758ca",
+       "quote": "Final price depends on size and length selected at appointment.",
+       "url": "https://www.fresha.com/a/quality-braids-by-grace-mn-st-louis-park-5851-cedar-lake-road-south-iftlb062",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "braiding (own menu)"
+      }
+     ]
+    },
+    {
+     "text": "Screen new clients with a photo or consultation before giving a price",
+     "cites": [
+      {
+       "id": "e_04919e2380",
+       "quote": "A picture of hair required before booking appointment.",
+       "url": "https://booksy.com/en-us/897853_locd-n-lashes_other_134619_minneapolis",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "suite braiding (own menu)"
+      }
+     ]
+    },
+    {
+     "text": "Price loc maintenance by loc length tier",
+     "cites": [
+      {
+       "id": "e_fc4d557693",
+       "quote": "Short Locs: $60 – $90 Medium Locs: $90 – $130 Long Locs: $130 – $180+",
+       "url": "https://booksy.com/en-us/1749170_the-braids-and-locs-studio_braids-locs_134619_minneapolis",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "braiding (own menu)"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Hair choice changes the price, so one number cannot be posted up front",
+     "cites": [
+      {
+       "id": "e_8a28ffaf70",
+       "quote": "Hair maybe included prices will increase based off hair choices.",
+       "url": "https://booksy.com/en-us/1071244_profashional_braids-locs_134619_minneapolis",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "braiding (own menu)"
+      }
+     ]
+    },
+    {
+     "text": "Extra bundles and styling length add charges on top of the starting price",
+     "cites": [
+      {
+       "id": "e_7690400186",
+       "quote": "Starting at $135, the price covers up to two to three bundles of hair, with additional bundles starting at $50.",
+       "url": "https://booksy.com/en-us/113300_eminent-hair-salon-llc-suite128_hair-salon_134619_minneapolis",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "braiding (own menu)"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "Send clients to a booking platform for the accurate price",
+     "cites": [
+      {
+       "id": "e_7690400186",
+       "quote": "VAGARO ONLY https://www.vagaro.com/eminenthairsalon1 FOR BOOKING AND ACCURATE PRICING.",
+       "url": "https://booksy.com/en-us/113300_eminent-hair-salon-llc-suite128_hair-salon_134619_minneapolis",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "braiding (own menu)"
+      }
+     ]
+    },
+    {
+     "text": "Ask clients to call or text to confirm style, price and time for custom work",
+     "cites": [
+      {
+       "id": "e_fe8520a234",
+       "quote": "Please call or text before booking to confirm your desired style, price, and time.",
+       "url": "https://malikamalika.glossgenius.com/",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "braiding (own menu)"
+      }
+     ]
+    }
+   ],
+   "wants": [],
+   "words": [
+    {
+     "text": "Price varies on hair length and density",
+     "cites": [
+      {
+       "id": "e_d2b2a0d296",
+       "quote": "Price varies on hair length and density",
+       "url": "https://booksy.com/en-us/1293821_mack-impressions_braids-locs_134619_minneapolis",
+       "date": "2026-10-05",
+       "source_kind": "own_site",
+       "speaker_kind": "braiding (own menu)"
+      }
+     ]
+    }
+   ],
+   "vouchers": [],
+   "questions": [
+    {
+     "text": "Does it compare ranges and starting prices, or only flat prices?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Can I filter by hair included versus not included?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  }
+ ],
+ "job_map": [
+  {
+   "segment": "New solo stylists",
+   "job": "Set first prices for color services after leaving a larger salon",
+   "step": "S2",
+   "fit": "full",
+   "why": "Lists what nearby shops charge for one service."
+  },
+  {
+   "segment": "New solo stylists",
+   "job": "Work out what to charge for a specific vivid-color service in a new salon",
+   "step": "S2",
+   "fit": "partial",
+   "why": "Shows peer prices for a service; add-on pricing for vivid color unclear."
+  },
+  {
+   "segment": "New solo stylists",
+   "job": "Set medium-range prices that attract new clients without looking like discount pricing",
+   "step": "S1",
+   "fit": "full",
+   "why": "Says whether a price is high or low for the area."
+  },
+  {
+   "segment": "Stylists facing price pushback",
+   "job": "Hold prices when a client haggles",
+   "step": "S1",
+   "fit": "partial",
+   "why": "Gives local high/low evidence, but no help with the client conversation."
+  },
+  {
+   "segment": "Stylists facing price pushback",
+   "job": "Roll out a price increase to long-time clients",
+   "step": null,
+   "fit": "none",
+   "why": "Tool offers no scripts or rollout support."
+  },
+  {
+   "segment": "Stylists facing price pushback",
+   "job": "Know what nearby salons charge",
+   "step": "S2",
+   "fit": "full",
+   "why": "Lists nearby shop prices, filterable by distance."
+  },
+  {
+   "segment": "Estheticians pricing services",
+   "job": "Check whether own wax prices are high for the area",
+   "step": "S1",
+   "fit": "full",
+   "why": "Directly says if your price is high or low."
+  },
+  {
+   "segment": "Estheticians pricing services",
+   "job": "Build a new menu without pricing mistakes",
+   "step": "S2",
+   "fit": "partial",
+   "why": "Shows peer prices per service, but not whole-menu design."
+  },
+  {
+   "segment": "Estheticians pricing services",
+   "job": "Move to no-tip pricing and stay within range of nearby competitors",
+   "step": "S1",
+   "fit": "partial",
+   "why": "Compares price to area; tip policy not captured."
+  },
+  {
+   "segment": "Braiding and loc stylists",
+   "job": "Quote by size and length instead of one flat price",
+   "step": "S1",
+   "fit": "partial",
+   "why": "Compares one price; range-by-size pricing handling is unclear."
+  },
+  {
+   "segment": "Braiding and loc stylists",
+   "job": "Screen new clients with a photo or consultation before giving a price",
+   "step": null,
+   "fit": "none",
+   "why": "Tool does not do client intake or quoting."
+  },
+  {
+   "segment": "Braiding and loc stylists",
+   "job": "Price loc maintenance by loc length tier",
+   "step": "S2",
+   "fit": "partial",
+   "why": "Lists peer prices, but length tiers may not be separable."
+  }
+ ],
+ "surprise": {
+  "text": "Shops are repricing around tipping policy and quoting 'from' or range prices, so a single number per service may not be comparable across shops, which could mislead the high/low verdict.",
+  "cites": [
+   {
+    "id": "e_8580ea4693",
+    "quote": "These prices reflect that this establishment no longer accepts tipping.",
+    "url": "https://mnhairwitch.glossgenius.com/",
+    "date": "2026-10-05",
+    "source_kind": "own_site",
+    "speaker_kind": "salon (own menu)"
+   },
+   {
+    "id": "e_ee45f42d21",
+    "quote": "I stopped taking tips and upped my pricing to $95 for a full leg, $72 for a wax Brazilian, and $75 for a sugar brazilian.",
+    "url": "https://reddit.com/comments/1t7dd41",
+    "date": "2026-05-08",
+    "source_kind": "reddit",
+    "speaker_kind": "esthetician"
+   },
+   {
+    "id": "e_9dd56758ca",
+    "quote": "Final price depends on size and length selected at appointment.",
+    "url": "https://www.fresha.com/a/quality-braids-by-grace-mn-st-louis-park-5851-cedar-lake-road-south-iftlb062",
+    "date": "2026-10-05",
+    "source_kind": "own_site",
+    "speaker_kind": "braiding (own menu)"
+   }
+  ]
+ },
+ "facts": [
+  {
+   "kind": "sends",
+   "segment_hint": "independent hairstylist",
+   "n": 34,
+   "positive": 0,
+   "text": "independent hairstylist: we emailed 34, 0 replied with substance",
+   "source": "panel-backtest/dataset.jsonl"
+  },
+  {
+   "kind": "sends",
+   "segment_hint": "salon (super_user)",
+   "n": 1,
+   "positive": 0,
+   "text": "salon (super_user): we emailed 1, 0 replied with substance",
+   "source": "panel-backtest/dataset.jsonl"
+  },
+  {
+   "kind": "menus",
+   "segment_hint": "barbershop",
+   "n": 334,
+   "text": "barbershop: 334 shops publish menus; of their 2340 prices, 81% fixed, 17% 'from', 1% a range or 'consult'",
+   "source": "salon-rates DB (shops' own published menus, 2026-10-05)"
+  },
+  {
+   "kind": "menus",
+   "segment_hint": "braiding",
+   "n": 112,
+   "text": "braiding: 112 shops publish menus; of their 3213 prices, 43% fixed, 56% 'from', 1% a range or 'consult'",
+   "source": "salon-rates DB (shops' own published menus, 2026-10-05)"
+  },
+  {
+   "kind": "menus",
+   "segment_hint": "suite",
+   "n": 105,
+   "text": "suite: 105 shops publish menus; of their 2636 prices, 49% fixed, 40% 'from', 5% a range or 'consult'",
+   "source": "salon-rates DB (shops' own published menus, 2026-10-05)"
+  },
+  {
+   "kind": "menus",
+   "segment_hint": "salon",
+   "n": 57,
+   "text": "salon: 57 shops publish menus; of their 2000 prices, 44% fixed, 42% 'from', 13% a range or 'consult'",
+   "source": "salon-rates DB (shops' own published menus, 2026-10-05)"
+  },
+  {
+   "kind": "menus",
+   "segment_hint": "other",
+   "n": 47,
+   "text": "other: 47 shops publish menus; of their 692 prices, 63% fixed, 33% 'from', 1% a range or 'consult'",
+   "source": "salon-rates DB (shops' own published menus, 2026-10-05)"
+  },
+  {
+   "kind": "menus",
+   "segment_hint": "nail",
+   "n": 36,
+   "text": "nail: 36 shops publish menus; of their 1026 prices, 64% fixed, 35% 'from', 1% a range or 'consult'",
+   "source": "salon-rates DB (shops' own published menus, 2026-10-05)"
+  },
+  {
+   "kind": "menus",
+   "segment_hint": "lash_brow",
+   "n": 32,
+   "text": "lash_brow: 32 shops publish menus; of their 976 prices, 93% fixed, 5% 'from', 1% a range or 'consult'",
+   "source": "salon-rates DB (shops' own published menus, 2026-10-05)"
+  }
+ ],
+ "evidence": {
+  "rows_available": 224,
+  "rows_read": 224,
+  "by_source": {
+   "own_site": 118,
+   "reddit": 106
+  }
+ },
+ "verification": {
+  "claims": 39,
+  "cites": 43
+ },
+ "model": "claude-sonnet-5-5"
+}
