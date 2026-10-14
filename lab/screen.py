@@ -30,7 +30,7 @@ def email_text(subject, body):
     return f"From: Aidan Jude <aidan@brickandmortar.dev>\nSubject: {subject}\n\n{body}"
 
 
-def forecast(kind, org, context, subject, body, model=SONNET):
+def forecast(kind, org, context, subject, body, model=SONNET, max_tokens=60):
     fc = claude(
         model,
         "You are a calibrated forecaster of cold-outreach outcomes. Base rates matter.",
@@ -38,7 +38,7 @@ def forecast(kind, org, context, subject, body, model=SONNET):
             {"recipient_kind": kind, "recipient_org": org, "recipient_context": context}) +
         "\n\n---\n" + email_text(subject, body) +
         "\n---\nGive P(recipient replies within a week) and P(recipient clicks the link) as "
-        'JSON: {"p_reply": 0-1, "p_click": 0-1}. JSON only.', max_tokens=60, tag="screen")
+        'JSON: {"p_reply": 0-1, "p_click": 0-1}. JSON only.', max_tokens=max_tokens, tag="screen")
     j = first_json(fc)
     return float(j["p_reply"]), float(j["p_click"])
 

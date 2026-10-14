@@ -1,0 +1,572 @@
+{
+ "product": "demolition-permit-scrap-leads",
+ "name": "Demolition Notice",
+ "live_url": "https://demolition-notice.vercel.app",
+ "one_liner": "Tracks Minneapolis and Saint Paul demolition permits, estimates what materials are inside each building, shows which contractor won the job, and who to contact about scrap.",
+ "steps": [
+  {
+   "id": "N1",
+   "verb_object": "Find newly issued demolition permits for buildings in Minneapolis and Saint Paul",
+   "url": "https://demolition-notice.vercel.app"
+  },
+  {
+   "id": "N2",
+   "verb_object": "Estimate the recoverable materials inside each building from its age, size, and use",
+   "url": "https://demolition-notice.vercel.app"
+  },
+  {
+   "id": "N3",
+   "verb_object": "Identify the winning demolition contractor and the contact for scrap and salvage",
+   "url": "https://demolition-notice.vercel.app"
+  }
+ ],
+ "segments": [
+  {
+   "name": "Saint Paul teardown neighbors",
+   "who": "Residents near Saint Paul demolition activity who follow what is being torn down around them and what gets stripped.",
+   "jobs": [
+    {
+     "text": "Keep track of the wave of teardowns happening around their neighborhood",
+     "cites": [
+      {
+       "id": "e_ca4e3d9ce9",
+       "quote": "How a teardown blitz is reshaping the neighborhood around the University of St. Thomas.",
+       "url": "https://reddit.com/comments/1sklf7b",
+       "date": "2026-04-13",
+       "source_kind": "reddit",
+       "speaker_kind": "local resident following building demolitions in Saint Paul"
+      }
+     ]
+    },
+    {
+     "text": "Follow copper theft from street lights in their area",
+     "cites": [
+      {
+       "id": "e_73490d7536",
+       "quote": "40 St. Paul street lights stripped of copper wiring, though reports are down overall.",
+       "url": "https://reddit.com/comments/1l36dml",
+       "date": "2025-06-04",
+       "source_kind": "reddit",
+       "speaker_kind": "local resident following building demolitions in Saint Paul"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "Neighbors are worried about the pace of teardowns near the university",
+     "cites": [
+      {
+       "id": "e_b1254a16ce",
+       "quote": "Teardown blitz worries University of St. Thomas neighbors.",
+       "url": "https://reddit.com/comments/1sklmct",
+       "date": "2026-04-13",
+       "source_kind": "reddit",
+       "speaker_kind": "local resident following building demolitions in Saint Paul"
+      }
+     ]
+    },
+    {
+     "text": "Copper wiring is being stripped from public street lights",
+     "cites": [
+      {
+       "id": "e_5ddd8c3243",
+       "quote": "Every Street Light on Shepard Rd has had its Copper Wiring Stripped.",
+       "url": "https://reddit.com/comments/1o7b9bb",
+       "date": "2025-10-15",
+       "source_kind": "reddit",
+       "speaker_kind": "local resident following building demolitions in Saint Paul"
+      }
+     ]
+    }
+   ],
+   "workarounds": [],
+   "wants": [],
+   "words": [
+    {
+     "text": "teardown blitz",
+     "cites": [
+      {
+       "id": "e_b1254a16ce",
+       "quote": "Teardown blitz worries University of St. Thomas neighbors.",
+       "url": "https://reddit.com/comments/1sklmct",
+       "date": "2026-04-13",
+       "source_kind": "reddit",
+       "speaker_kind": "local resident following building demolitions in Saint Paul"
+      }
+     ]
+    }
+   ],
+   "vouchers": [],
+   "questions": [
+    {
+     "text": "Which specific buildings on my street have demolition permits, and when were they issued?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Is this showing me permits only, or does it also say who is doing the work?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Demolition contractors and estimators",
+   "who": "Demolition and deconstruction professionals who bid jobs, manage hazards and permits on site, and deal with salvage.",
+   "jobs": [
+    {
+     "text": "Run complex demolition jobs with heavy cutting and breaking crews",
+     "cites": [
+      {
+       "id": "e_c49b732a97",
+       "quote": "Wire-saw crews ran 24/7 to slice the vault into manageable chunks",
+       "url": "https://reddit.com/comments/1lmytv9",
+       "date": "2025-06-28",
+       "source_kind": "reddit",
+       "speaker_kind": "contractor or estimator discussing demolition bids and salvage"
+      }
+     ]
+    },
+    {
+     "text": "Meet permit prerequisites before a demolition permit can be pulled",
+     "cites": [
+      {
+       "id": "e_d86a6a1393",
+       "quote": "you must provide a Rat Abatement Certificate before pulling a demolition permit",
+       "url": "https://reddit.com/comments/1ka2fa8",
+       "date": "2025-04-28",
+       "source_kind": "reddit",
+       "speaker_kind": "contractor or estimator discussing demolition bids and salvage"
+      }
+     ]
+    },
+    {
+     "text": "Deal with suspected asbestos found during a demolition job",
+     "cites": [
+      {
+       "id": "e_b14425ce3f",
+       "quote": "recently came across what they suspected was asbestos",
+       "url": "https://reddit.com/comments/1g8gug8",
+       "date": "2024-10-21",
+       "source_kind": "reddit",
+       "speaker_kind": "contractor or estimator discussing demolition bids and salvage"
+      }
+     ]
+    },
+    {
+     "text": "Handle reclaimed building materials and architectural salvage",
+     "cites": [
+      {
+       "id": "e_e8b43c90b8",
+       "quote": "handling reclaimed building materials, architectural salvage and good old fashioned ground dirt",
+       "url": "https://reddit.com/comments/1l8i4gl",
+       "date": "2025-06-11",
+       "source_kind": "reddit",
+       "speaker_kind": "contractor or estimator discussing demolition bids and salvage"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "They are looking for a CRM that fits excavation and demolition contractors, and are unsure one exists",
+     "cites": [
+      {
+       "id": "e_578ff14706",
+       "quote": "Excavation/Demolition Contractors Is There Actually a Good All-in-One CRM?",
+       "url": "https://reddit.com/comments/1vie6ky",
+       "date": "2026-08-07",
+       "source_kind": "reddit",
+       "speaker_kind": "contractor or estimator discussing demolition bids and salvage"
+      }
+     ]
+    }
+   ],
+   "workarounds": [],
+   "wants": [],
+   "words": [
+    {
+     "text": "Rat Abatement Certificate",
+     "cites": [
+      {
+       "id": "e_d86a6a1393",
+       "quote": "you must provide a Rat Abatement Certificate before pulling a demolition permit",
+       "url": "https://reddit.com/comments/1ka2fa8",
+       "date": "2025-04-28",
+       "source_kind": "reddit",
+       "speaker_kind": "contractor or estimator discussing demolition bids and salvage"
+      }
+     ]
+    },
+    {
+     "text": "design for disassembly or deconstruction",
+     "cites": [
+      {
+       "id": "e_b959c76564",
+       "quote": "specialize in design for disassembly or deconstruction",
+       "url": "https://reddit.com/comments/1gwuj0w",
+       "date": "2024-11-22",
+       "source_kind": "reddit",
+       "speaker_kind": "contractor or estimator discussing demolition bids and salvage"
+      }
+     ]
+    }
+   ],
+   "vouchers": [],
+   "questions": [
+    {
+     "text": "Does this list jobs that are already awarded, or only permits?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Does it flag hazards like asbestos or other permit prerequisites for a building?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "New copper scrappers",
+   "who": "Individuals new to scrapping who have a pile of wire or metal and want to know how to sell it and what it is worth.",
+   "jobs": [
+    {
+     "text": "Take a first load of copper wiring to a scrap yard without embarrassing themselves",
+     "cites": [
+      {
+       "id": "e_721bcdd120",
+       "quote": "Will they take copper wiring bundled up as in picture or do I need to tie it up a certain way for them to inspect it?",
+       "url": "https://reddit.com/comments/1nh3auj",
+       "date": "2025-09-14",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    },
+    {
+     "text": "Work out roughly how much cash a pile of copper wiring will bring",
+     "cites": [
+      {
+       "id": "e_b143cbb6e5",
+       "quote": "Anyone wanna take a guess at how much me and my cousin would make if we scrapped this for cash?",
+       "url": "https://reddit.com/comments/1jvntce",
+       "date": "2025-04-10",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    },
+    {
+     "text": "Grade old copper wire correctly before selling it",
+     "cites": [
+      {
+       "id": "e_6fb68bf9b2",
+       "quote": "came across a crate full of this old cloth copper wiring",
+       "url": "https://reddit.com/comments/1v08d8l",
+       "date": "2026-07-18",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "pains": [
+    {
+     "text": "They are unsure whether breaking down a heavy item such as transformers is worth the effort",
+     "cites": [
+      {
+       "id": "e_12f24eddc9",
+       "quote": "Is it worth attempting to deconstruct the transformers or should I just chuck them in the ferrous skip?",
+       "url": "https://reddit.com/comments/1wisva8",
+       "date": "2026-09-17",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    },
+    {
+     "text": "Plastic bits left in a wire bundle affect how it is sorted",
+     "cites": [
+      {
+       "id": "e_6a8ba461d1",
+       "quote": "all the copper wiring was bare bright, the rats nest would have been but it had some bits of plastic in it.",
+       "url": "https://reddit.com/comments/1ued24h",
+       "date": "2026-06-24",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "workarounds": [
+    {
+     "text": "They watch peer YouTube videos for teardown advice, often after already starting",
+     "cites": [
+      {
+       "id": "e_b10470f4e4",
+       "quote": "I highly recommend scrapitall's YouTube video on it",
+       "url": "https://reddit.com/comments/1ux7clw",
+       "date": "2026-07-15",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "wants": [],
+   "words": [
+    {
+     "text": "bare bright",
+     "cites": [
+      {
+       "id": "e_6a8ba461d1",
+       "quote": "all the copper wiring was bare bright, the rats nest would have been but it had some bits of plastic in it.",
+       "url": "https://reddit.com/comments/1ued24h",
+       "date": "2026-06-24",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "vouchers": [
+    {
+     "text": "Scrapping forum peers and YouTube teardown videos",
+     "cites": [
+      {
+       "id": "e_b10470f4e4",
+       "quote": "I highly recommend scrapitall's YouTube video on it",
+       "url": "https://reddit.com/comments/1ux7clw",
+       "date": "2026-07-15",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "text": "Does this tell me what the scrap is worth, or just that it exists?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "Can I buy directly from the demolition site, or do I have to go through a yard?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  },
+  {
+   "name": "Scrap route builders",
+   "who": "People who left other work to scrap and salvage full time, sourcing metal from neighborhoods and clean-outs.",
+   "jobs": [
+    {
+     "text": "Find scrap sources by driving around neighborhoods",
+     "cites": [
+      {
+       "id": "e_de0647f811",
+       "quote": "I started picking a bit in September, just driving around the neighborhood.",
+       "url": "https://reddit.com/comments/1pk4yoc",
+       "date": "2025-12-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    },
+    {
+     "text": "Offer scrap removal for house clean-outs and form relationships with local businesses",
+     "cites": [
+      {
+       "id": "e_de0647f811",
+       "quote": "Have expanded to doing some scrap removal for house clean outs and beginning to form relationships",
+       "url": "https://reddit.com/comments/1pk4yoc",
+       "date": "2025-12-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    },
+    {
+     "text": "Sell steel as they collect it and reinvest in better tools",
+     "cites": [
+      {
+       "id": "e_de0647f811",
+       "quote": "my scrap runs are just dumping steel as I get it",
+       "url": "https://reddit.com/comments/1pk4yoc",
+       "date": "2025-12-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "pains": [],
+   "workarounds": [
+    {
+     "text": "They find material by driving around and picking, not from any list",
+     "cites": [
+      {
+       "id": "e_de0647f811",
+       "quote": "I started picking a bit in September, just driving around the neighborhood.",
+       "url": "https://reddit.com/comments/1pk4yoc",
+       "date": "2025-12-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "wants": [],
+   "words": [
+    {
+     "text": "scrap removal for house clean outs",
+     "cites": [
+      {
+       "id": "e_de0647f811",
+       "quote": "Have expanded to doing some scrap removal for house clean outs and beginning to form relationships",
+       "url": "https://reddit.com/comments/1pk4yoc",
+       "date": "2025-12-11",
+       "source_kind": "reddit",
+       "speaker_kind": "reddit user"
+      }
+     ]
+    }
+   ],
+   "vouchers": [],
+   "questions": [
+    {
+     "text": "Who exactly is the scrap contact, and are they open to someone small hauling material?",
+     "cites": [],
+     "hypothesis": true
+    },
+    {
+     "text": "How current are the permits, and how do I know a job has not already been stripped?",
+     "cites": [],
+     "hypothesis": true
+    }
+   ]
+  }
+ ],
+ "job_map": [
+  {
+   "segment": "Saint Paul teardown neighbors",
+   "job": "Keep track of the wave of teardowns happening around their neighborhood",
+   "step": "N1",
+   "fit": "partial",
+   "why": "Lists new permits in Saint Paul but is not a neighborhood watch view."
+  },
+  {
+   "segment": "Saint Paul teardown neighbors",
+   "job": "Follow copper theft from street lights in their area",
+   "step": null,
+   "fit": "none",
+   "why": "Tool covers demolition permits, not theft or street light reports."
+  },
+  {
+   "segment": "Demolition contractors and estimators",
+   "job": "Run complex demolition jobs with heavy cutting and breaking crews",
+   "step": null,
+   "fit": "none",
+   "why": "Tool does not help with execution on site."
+  },
+  {
+   "segment": "Demolition contractors and estimators",
+   "job": "Meet permit prerequisites before a demolition permit can be pulled",
+   "step": null,
+   "fit": "none",
+   "why": "Tool shows issued permits, not permit prerequisites. The cited rule is from King County."
+  },
+  {
+   "segment": "Demolition contractors and estimators",
+   "job": "Deal with suspected asbestos found during a demolition job",
+   "step": null,
+   "fit": "none",
+   "why": "Tool estimates recoverable materials, not hazardous material findings."
+  },
+  {
+   "segment": "Demolition contractors and estimators",
+   "job": "Handle reclaimed building materials and architectural salvage",
+   "step": "N2",
+   "fit": "partial",
+   "why": "Estimates materials by building, but not reclaimed items or architectural salvage."
+  },
+  {
+   "segment": "New copper scrappers",
+   "job": "Take a first load of copper wiring to a scrap yard without embarrassing themselves",
+   "step": null,
+   "fit": "none",
+   "why": "Tool offers no yard etiquette or acceptance guidance."
+  },
+  {
+   "segment": "New copper scrappers",
+   "job": "Work out roughly how much cash a pile of copper wiring will bring",
+   "step": null,
+   "fit": "none",
+   "why": "Tool estimates materials in buildings, with no pricing."
+  },
+  {
+   "segment": "New copper scrappers",
+   "job": "Grade old copper wire correctly before selling it",
+   "step": null,
+   "fit": "none",
+   "why": "Tool does not grade or identify scrap."
+  },
+  {
+   "segment": "Scrap route builders",
+   "job": "Find scrap sources by driving around neighborhoods",
+   "step": "N1",
+   "fit": "partial",
+   "why": "Permits point to buildings coming down, but only in two cities."
+  },
+  {
+   "segment": "Scrap route builders",
+   "job": "Offer scrap removal for house clean-outs and form relationships with local businesses",
+   "step": "N3",
+   "fit": "partial",
+   "why": "Gives the scrap contact at the winning contractor, not residential clean-out leads."
+  },
+  {
+   "segment": "Scrap route builders",
+   "job": "Sell steel as they collect it and reinvest in better tools",
+   "step": null,
+   "fit": "none",
+   "why": "Selling scrap and buying equipment are outside the tool."
+  }
+ ],
+ "surprise": {
+  "text": "The scrapper posts ask about yard acceptance, wire grading and what a pile will earn, not about which buildings are coming down, so material estimates may need a price and grade layer.",
+  "cites": [
+   {
+    "id": "e_721bcdd120",
+    "quote": "Will they take copper wiring bundled up as in picture or do I need to tie it up a certain way for them to inspect it?",
+    "url": "https://reddit.com/comments/1nh3auj",
+    "date": "2025-09-14",
+    "source_kind": "reddit",
+    "speaker_kind": "reddit user"
+   },
+   {
+    "id": "e_b143cbb6e5",
+    "quote": "Anyone wanna take a guess at how much me and my cousin would make if we scrapped this for cash?",
+    "url": "https://reddit.com/comments/1jvntce",
+    "date": "2025-04-10",
+    "source_kind": "reddit",
+    "speaker_kind": "reddit user"
+   }
+  ]
+ },
+ "facts": [],
+ "evidence": {
+  "rows_available": 40,
+  "rows_read": 40,
+  "by_source": {
+   "reddit": 40
+  }
+ },
+ "verification": {
+  "claims": 25,
+  "cites": 27
+ },
+ "model": "claude-sonnet-5-5"
+}

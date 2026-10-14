@@ -111,11 +111,9 @@ def verify(item, by_id, stats):
     return good
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("product")
-    ap.add_argument("--max-rows", type=int, default=260)
-    a = ap.parse_args()
+def build(product, max_rows=260):
+    """Build maps/<product>.json from data/evidence/<product>.jsonl. Returns the map."""
+    a = argparse.Namespace(product=product, max_rows=max_rows)
     P = PRODUCTS[a.product]
     ev = read_jsonl(EVIDENCE / f"{a.product}.jsonl")
     rows = pick_rows(ev, a.max_rows)
@@ -174,6 +172,15 @@ def main():
     print(f"{a.product}: {len(segs)} segments; claims {stats['claims']}, dropped {stats['dropped_claims']}; "
           f"cites {stats['cites']}, failed verbatim check {stats['bad_cites']}; gaps "
           f"{sum(1 for j in jm if not j.get('step') or j.get('fit') == 'none')}/{len(jm)} jobs")
+    return result
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("product")
+    ap.add_argument("--max-rows", type=int, default=260)
+    a = ap.parse_args()
+    build(a.product, a.max_rows)
 
 
 if __name__ == "__main__":

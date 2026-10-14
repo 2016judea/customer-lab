@@ -1,0 +1,587 @@
+{
+ "product": "demolition-permit-scrap-leads",
+ "name": "Demolition Notice",
+ "made_at": "2026-10-13",
+ "iterations": [
+  {
+   "rank": 1,
+   "change": "For each new permit, the tool drafts a scrap-removal note to the winning contractor's scrap contact. The note opens on that contractor's own permit and names the building's likely recoverable materials.",
+   "the_step": "Find scrap sources by driving around neighborhoods, then work out who to talk to and what to say to get 'scrap removal for house clean outs' and 'form relationships' started.",
+   "serves": [
+    {
+     "id": "G10",
+     "segment": "Scrap route builders",
+     "kind": "gap",
+     "claim": "Find scrap sources by driving around neighborhoods",
+     "fit": "partial",
+     "why": "Permits point to buildings coming down, but only in two cities.",
+     "quote": "I started picking a bit in September, just driving around the neighborhood.",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    },
+    {
+     "id": "G11",
+     "segment": "Scrap route builders",
+     "kind": "gap",
+     "claim": "Offer scrap removal for house clean-outs and form relationships with local businesses",
+     "fit": "partial",
+     "why": "Gives the scrap contact at the winning contractor, not residential clean-out leads.",
+     "quote": "Have expanded to doing some scrap removal for house clean outs and beginning to form relationships",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    },
+    {
+     "id": "C21",
+     "segment": "Scrap route builders",
+     "kind": "jobs",
+     "claim": "Find scrap sources by driving around neighborhoods",
+     "quote": "I started picking a bit in September, just driving around the neighborhood.",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    },
+    {
+     "id": "C22",
+     "segment": "Scrap route builders",
+     "kind": "jobs",
+     "claim": "Offer scrap removal for house clean-outs and form relationships with local businesses",
+     "quote": "Have expanded to doing some scrap removal for house clean outs and beginning to form relationships",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    },
+    {
+     "id": "C24",
+     "segment": "Scrap route builders",
+     "kind": "workarounds",
+     "claim": "They find material by driving around and picking, not from any list",
+     "quote": "I started picking a bit in September, just driving around the neighborhood.",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    },
+    {
+     "id": "C25",
+     "segment": "Scrap route builders",
+     "kind": "words",
+     "claim": "scrap removal for house clean outs",
+     "quote": "Have expanded to doing some scrap removal for house clean outs and beginning to form relationships",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    }
+   ],
+   "ideal_fields": [
+    {
+     "field": "permit address, issue date and permit type",
+     "answers": "Which building is actually coming down, and when?",
+     "source": "Minneapolis and Saint Paul demolition permit records (N1)",
+     "locator": "https://demolition-notice.vercel.app",
+     "status": "exists",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "winning demolition contractor per permit",
+     "answers": "Who holds the job, so I know whose scrap I am asking about?",
+     "source": "Permit record contractor field (N3)",
+     "locator": "https://demolition-notice.vercel.app",
+     "status": "partial",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "scrap and salvage contact name, role, email or phone",
+     "answers": "Who do I contact about scrap on this job?",
+     "source": "Contractor websites, state business filings, and the contractor's own published salvage or recycling statements",
+     "locator": "",
+     "status": "partial",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "recoverable materials estimate with the building age, size and use it came from",
+     "answers": "What is probably inside, so my note is specific to this building?",
+     "source": "Tool step N2 from permit and assessor attributes",
+     "locator": "https://demolition-notice.vercel.app",
+     "status": "partial",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "drafted opener quoting the contractor's own permit, plus a reader-supplied line about the sender's own scrap work",
+     "answers": "What do I say so the message is plainly about their job?",
+     "source": "Model drafting over the permit row and the user's own text; the model supplies no numbers",
+     "locator": "",
+     "status": "exists",
+     "checked": "not checked (no locator given)"
+    }
+   ],
+   "reality": "Permits and estimates can fill most of the model, but the scrap contact per contractor is only partly fillable and residential clean-out leads are missing entirely, so reframe the goal to contractor scrap relationships and do not claim house clean-out leads."
+  },
+  {
+   "rank": 2,
+   "change": "A neighborhood teardown digest: the user picks an address or landmark in Saint Paul, and the tool reads new permits nearby and writes a plain-language summary of the teardown wave. It lists each building, its age, who is taking it down, and what changed since the last digest.",
+   "the_step": "Keep track of the wave of teardowns happening around the neighborhood, so the reader no longer has to scan permit lists.",
+   "serves": [
+    {
+     "id": "G1",
+     "segment": "Saint Paul teardown neighbors",
+     "kind": "gap",
+     "claim": "Keep track of the wave of teardowns happening around their neighborhood",
+     "fit": "partial",
+     "why": "Lists new permits in Saint Paul but is not a neighborhood watch view.",
+     "quote": "How a teardown blitz is reshaping the neighborhood around the University of St. Thomas.",
+     "url": "https://reddit.com/comments/1sklf7b",
+     "date": "2026-04-13"
+    },
+    {
+     "id": "C1",
+     "segment": "Saint Paul teardown neighbors",
+     "kind": "jobs",
+     "claim": "Keep track of the wave of teardowns happening around their neighborhood",
+     "quote": "How a teardown blitz is reshaping the neighborhood around the University of St. Thomas.",
+     "url": "https://reddit.com/comments/1sklf7b",
+     "date": "2026-04-13"
+    },
+    {
+     "id": "C3",
+     "segment": "Saint Paul teardown neighbors",
+     "kind": "pains",
+     "claim": "Neighbors are worried about the pace of teardowns near the university",
+     "quote": "Teardown blitz worries University of St. Thomas neighbors.",
+     "url": "https://reddit.com/comments/1sklmct",
+     "date": "2026-04-13"
+    },
+    {
+     "id": "C5",
+     "segment": "Saint Paul teardown neighbors",
+     "kind": "words",
+     "claim": "teardown blitz",
+     "quote": "Teardown blitz worries University of St. Thomas neighbors.",
+     "url": "https://reddit.com/comments/1sklmct",
+     "date": "2026-04-13"
+    }
+   ],
+   "ideal_fields": [
+    {
+     "field": "permit address geocoded to a neighborhood or distance from a chosen landmark",
+     "answers": "Which teardowns are near me?",
+     "source": "Saint Paul permit records plus city address and neighborhood boundary data",
+     "locator": "",
+     "status": "partial",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "permit issue date history for the area",
+     "answers": "Is the pace changing around here?",
+     "source": "Saint Paul permit records, counted from the data at read time",
+     "locator": "https://demolition-notice.vercel.app",
+     "status": "exists",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "building age, size and use for each teardown",
+     "answers": "What is coming down: a house, a garage or a commercial building?",
+     "source": "Tool step N2 inputs",
+     "locator": "https://demolition-notice.vercel.app",
+     "status": "partial",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "winning contractor per teardown",
+     "answers": "Who is doing the work next door?",
+     "source": "Permit record contractor field",
+     "locator": "https://demolition-notice.vercel.app",
+     "status": "partial",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "what is planned to replace each building",
+     "answers": "What is going up in its place?",
+     "source": "New-construction permits matched by address",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    }
+   ],
+   "reality": "Permits, dates and contractors can fill the model, but the replacement-building field is missing and the neighborhood geocode is partial, so reframe the digest around what is coming down until a matching new-construction source is found. Street light copper theft (G2) is outside the tool and is not served."
+  },
+  {
+   "rank": 3,
+   "change": "The tool reads each building's age, size and use and drafts an item-class salvage walkthrough list for estimators, covering reclaimed building materials and architectural salvage classes typical of that building type.",
+   "the_step": "Handle reclaimed building materials and architectural salvage: decide which classes to look for in this building and write the list a crew or buyer can walk.",
+   "serves": [
+    {
+     "id": "G6",
+     "segment": "Demolition contractors and estimators",
+     "kind": "gap",
+     "claim": "Handle reclaimed building materials and architectural salvage",
+     "fit": "partial",
+     "why": "Estimates materials by building, but not reclaimed items or architectural salvage.",
+     "quote": "handling reclaimed building materials, architectural salvage and good old fashioned ground dirt",
+     "url": "https://reddit.com/comments/1l8i4gl",
+     "date": "2025-06-11"
+    },
+    {
+     "id": "C9",
+     "segment": "Demolition contractors and estimators",
+     "kind": "jobs",
+     "claim": "Handle reclaimed building materials and architectural salvage",
+     "quote": "handling reclaimed building materials, architectural salvage and good old fashioned ground dirt",
+     "url": "https://reddit.com/comments/1l8i4gl",
+     "date": "2025-06-11"
+    },
+    {
+     "id": "C12",
+     "segment": "Demolition contractors and estimators",
+     "kind": "words",
+     "claim": "design for disassembly or deconstruction",
+     "quote": "specialize in design for disassembly or deconstruction",
+     "url": "https://reddit.com/comments/1gwuj0w",
+     "date": "2024-11-22"
+    }
+   ],
+   "ideal_fields": [
+    {
+     "field": "year built, gross floor area, use and construction type",
+     "answers": "What kind of building is this, and what era of material is in it?",
+     "source": "County assessor records matched to the permit address",
+     "locator": "",
+     "status": "partial",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "item-level salvage inventory (doors, fixtures, timber, brick, metals)",
+     "answers": "Which reclaimed items are in this specific building?",
+     "source": "On-site walkthrough or photos supplied by the estimator; no public source holds this",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "salvage class guidance by building era and use",
+     "answers": "What do buildings like this usually hold that is worth pulling before demolition?",
+     "source": "Published deconstruction guides and reuse-center material lists read by the model",
+     "locator": "",
+     "status": "partial",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "buyer or reuse outlet for each class",
+     "answers": "Where does this material go once it is out?",
+     "source": "Local reuse and architectural salvage dealers' own listings",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    }
+   ],
+   "reality": "Item-level inventory and reuse outlets cannot be filled from public data, so reframe: the tool reasons over the estimator's own walkthrough photos and notes (a customer-supplied input) and does not claim building-level item counts. Hazardous material findings such as suspected asbestos (G5) stay out of scope."
+  }
+ ],
+ "plays": [
+  {
+   "channel": "Email to scrap YouTube creators and scrapping-forum moderators, each opening on the video or thread their audience already points to, offering the free permit page as something to cover or link",
+   "voucher": "super user",
+   "who_vouches": "Scrapping forum peers and YouTube teardown videos are what new scrappers already follow for teardown advice, so the creator's fan-out is the trust.",
+   "recipient_source": "Named creators and moderators found by searching the forums and videos behind the C18 and C20 quotes; Saint Paul neighborhood newsletter editors and district council communicators found on their own posts about teardowns (C3). Hold the batch until at least 50 delivered named recipients, each with a looked-up video, thread or post, are listed.",
+   "offer_mode": "visibility",
+   "rank": 1,
+   "vouch_evidence": [
+    {
+     "id": "C20",
+     "segment": "New copper scrappers",
+     "kind": "vouchers",
+     "claim": "Scrapping forum peers and YouTube teardown videos",
+     "quote": "I highly recommend scrapitall's YouTube video on it",
+     "url": "https://reddit.com/comments/1ux7clw",
+     "date": "2026-07-15"
+    },
+    {
+     "id": "C18",
+     "segment": "New copper scrappers",
+     "kind": "workarounds",
+     "claim": "They watch peer YouTube videos for teardown advice, often after already starting",
+     "quote": "I highly recommend scrapitall's YouTube video on it",
+     "url": "https://reddit.com/comments/1ux7clw",
+     "date": "2026-07-15"
+    },
+    {
+     "id": "C13",
+     "segment": "New copper scrappers",
+     "kind": "jobs",
+     "claim": "Take a first load of copper wiring to a scrap yard without embarrassing themselves",
+     "quote": "Will they take copper wiring bundled up as in picture or do I need to tie it up a certain way for them to inspect it?",
+     "url": "https://reddit.com/comments/1nh3auj",
+     "date": "2025-09-14"
+    }
+   ],
+   "segments": [
+    "New copper scrappers",
+    "Scrap route builders",
+    "Saint Paul teardown neighbors"
+   ],
+   "floor": {
+    "recipients": 50,
+    "segments_required": 3,
+    "segments_named": 3,
+    "meets_segment_floor": true,
+    "note": "BUSINESS.md rule 4: 50 delivered recipients from 3+ segments; fewer is a probe."
+   },
+   "past_runs": [
+    {
+     "id": "L8",
+     "channel": "brokers (super user)",
+     "run": "pilot via one CRE broker, 5/31–6/04",
+     "result": "brief + two dossiers delivered; broker \"LOVED them\"; never scaled past the one broker",
+     "source": "[[project_broker_channel]]"
+    },
+    {
+     "id": "L10",
+     "channel": "free counterparty list by email (their own record + none)",
+     "run": "7 sent 9/28 to businesses picked from a database, no ask; 2 sent 10/04 to businesses found by their OWN Craigslist post, the post quoted in line one",
+     "result": "**1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, \"this certainly got my attention… extremely clever\". The 7 picked from a database: silence. `~/Desktop/on-the-house/drafts/permits/README.md`",
+     "source": "`counterparty-gift` skill"
+    },
+    {
+     "id": "L11",
+     "channel": "cold email that quotes their own filing and asks for nothing (their own record)",
+     "run": "~25 water/wastewater agencies 9/08, each email naming the agency's own sole-source or obsolescence record, four sentences, \"Not selling anything\"",
+     "result": "**2 replied in a day** (Harford MD ops chief, Lakehaven WA purchasing), both substantive, both answered the follow-up the same day. 8%, against 0 of 1,537 for cold email that led with us",
+     "source": "parts repo `outreach/README.md`; Zoho threads \"Sod Run SCADA upgrade\", \"parts for old equipment\""
+    },
+    {
+     "id": "L12",
+     "channel": "free tool page, line one quotes their own record (their own record + none)",
+     "run": "10/05, four batches: 35 salons/stylists (their own booking-menu price vs nearby median), 10 Social Calendar organizers + 2 neighborhood newsletters (their own schedule, deep-linked to their event), 15 dementia support-group / AAA / caregiver-program leads (their own program page), 14 MN nurse-aide programs (their own row in MDH 2025 test results). Mailgun caps the domain at **100 send REQUESTS per rolling 24h**, across every campaign — refusal text 'daily request limit (100) exceeded, try again after <time>' (hit 2026-10-06; refused requests never show in stats, which is why stats alone suggested no cap). Bounces are the second limit: 5.4% over 30d against a 3% stop (`scripts/outreach/mailgun_health.py`)",
+     "result": "pending, read 10/12; the direct A/B with the PT-clinic batch (51, opened on the gift)",
+     "source": "`data/outreach/{salon_rates,social_calendar,dementia_coach,cna_shield}/tokens.csv`"
+    }
+   ],
+   "past_sends": {
+    "permit-gifts|email": {
+     "sends": 8,
+     "positive": 1,
+     "negative": 0,
+     "auto": 0,
+     "silent": 7
+    },
+    "wrecking-permit leads (ScrapWatch precursor)|email": {
+     "sends": 3,
+     "positive": 0,
+     "negative": 0,
+     "auto": 0,
+     "silent": 3
+    },
+    "social-calendar|email": {
+     "sends": 9,
+     "positive": 1,
+     "negative": 0,
+     "auto": 0,
+     "silent": 8
+    }
+   },
+   "past_sends_total": {
+    "sends": 20,
+    "positive": 2,
+    "negative": 0,
+    "auto": 0,
+    "silent": 18
+   },
+   "draft": {
+    "recipient_kind": "scrap YouTube creator or forum moderator",
+    "org_example": "scrapitall (YouTube)",
+    "context": "Their video that a scrapping-forum poster pointed to with 'I highly recommend scrapitall's YouTube video on it'.",
+    "subject": "Your video on [video title]",
+    "body": "A scrapping-forum poster pointed to your video '[video title]' with 'I highly recommend scrapitall's YouTube video on it.' I watched it, and the part on [specific moment in the video] is the one I came back to. Minneapolis and Saint Paul issue demolition permits, and I put each new one on one page with an estimate of what materials are inside and who won the job. It's free and no reply is needed: [link]. If it is ever useful for a video or a forum thread, it is yours to use. I also do custom pulls. Story behind it: [Substack link]. Aidan"
+   },
+   "screen": {
+    "prediction_id": "nx_4d8ac197a6e9",
+    "p_reply": 0.07,
+    "p_click": 0.22,
+    "method": "forecaster-v1 (max_tokens 400)"
+   }
+  },
+  {
+   "channel": "Email quoting each recipient's own public record: the contractor's own issued permit, the route builder's own post, the neighborhood group's own teardown post",
+   "voucher": "their own record",
+   "who_vouches": "The reader's own permit, post or newsletter line proves the message is theirs alone; the Substack link is the credential.",
+   "recipient_source": "Contractors named on recent Minneapolis and Saint Paul demolition permits (their own permit); route builders found through their own public posts like the one in C21 and C22; Saint Paul neighbors found through their own public posts or newsletters about the teardown blitz (C3, C5). Hold the batch until at least 50 delivered named recipients are listed, each with a quotable record.",
+   "offer_mode": "visibility",
+   "rank": 2,
+   "vouch_evidence": [
+    {
+     "id": "C21",
+     "segment": "Scrap route builders",
+     "kind": "jobs",
+     "claim": "Find scrap sources by driving around neighborhoods",
+     "quote": "I started picking a bit in September, just driving around the neighborhood.",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    },
+    {
+     "id": "C22",
+     "segment": "Scrap route builders",
+     "kind": "jobs",
+     "claim": "Offer scrap removal for house clean-outs and form relationships with local businesses",
+     "quote": "Have expanded to doing some scrap removal for house clean outs and beginning to form relationships",
+     "url": "https://reddit.com/comments/1pk4yoc",
+     "date": "2025-12-11"
+    },
+    {
+     "id": "C3",
+     "segment": "Saint Paul teardown neighbors",
+     "kind": "pains",
+     "claim": "Neighbors are worried about the pace of teardowns near the university",
+     "quote": "Teardown blitz worries University of St. Thomas neighbors.",
+     "url": "https://reddit.com/comments/1sklmct",
+     "date": "2026-04-13"
+    },
+    {
+     "id": "C7",
+     "segment": "Demolition contractors and estimators",
+     "kind": "jobs",
+     "claim": "Meet permit prerequisites before a demolition permit can be pulled",
+     "quote": "you must provide a Rat Abatement Certificate before pulling a demolition permit",
+     "url": "https://reddit.com/comments/1ka2fa8",
+     "date": "2025-04-28"
+    }
+   ],
+   "segments": [
+    "Demolition contractors and estimators",
+    "Scrap route builders",
+    "Saint Paul teardown neighbors"
+   ],
+   "floor": {
+    "recipients": 50,
+    "segments_required": 3,
+    "segments_named": 3,
+    "meets_segment_floor": true,
+    "note": "BUSINESS.md rule 4: 50 delivered recipients from 3+ segments; fewer is a probe."
+   },
+   "past_runs": [
+    {
+     "id": "L11",
+     "channel": "cold email that quotes their own filing and asks for nothing (their own record)",
+     "run": "~25 water/wastewater agencies 9/08, each email naming the agency's own sole-source or obsolescence record, four sentences, \"Not selling anything\"",
+     "result": "**2 replied in a day** (Harford MD ops chief, Lakehaven WA purchasing), both substantive, both answered the follow-up the same day. 8%, against 0 of 1,537 for cold email that led with us",
+     "source": "parts repo `outreach/README.md`; Zoho threads \"Sod Run SCADA upgrade\", \"parts for old equipment\""
+    },
+    {
+     "id": "L10",
+     "channel": "free counterparty list by email (their own record + none)",
+     "run": "7 sent 9/28 to businesses picked from a database, no ask; 2 sent 10/04 to businesses found by their OWN Craigslist post, the post quoted in line one",
+     "result": "**1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, \"this certainly got my attention… extremely clever\". The 7 picked from a database: silence. `~/Desktop/on-the-house/drafts/permits/README.md`",
+     "source": "`counterparty-gift` skill"
+    },
+    {
+     "id": "Y1",
+     "sent": "10/04",
+     "to": "Joel Oine, Blue Vector Bookkeeping",
+     "opening": "\"Your Craigslist post said restaurant owners should get more from their books than a P&L… So I pulled every Minneapolis permit this year to build, convert or re-hood a restaurant\"",
+     "came_back": "reply in 13 h, \"extremely clever\", asked what the story is"
+    },
+    {
+     "id": "L14",
+     "channel": "own-quote cold email + channel pitches (their own record + obligation)",
+     "run": "Dock Doors 10/06: 28 operators, each email opening on a verbatim quote they gave a podcast or trade magazine, mapped to one door, no ask; plus 13 pitches each opening on the inbox's own published call (SCMR, Supply Chain Xchange, DC Velocity, Inbound Logistics, PARCEL, IWLA, WERC Midwest, UMN CTS, Enterprise MN, 3 podcasts, On the Seams) and 1 GitHub PR + 1 issue. 26 of 28 operator addresses were pattern guesses",
+     "result": "pending, readout 10/13",
+     "source": "`~/Desktop/dock-doors/research/outreach/`"
+    },
+    {
+     "id": "L15",
+     "channel": "cold email, their own deed or post + free comp password (their own record; a gift by mistake)",
+     "run": "msp-house-index batch 1, 10/12: **51 sent** to Twin Cities investors, agents and writers, each carrying a free `comp:` password, which was a mistake (rule 12). 3 bounced; Zoho blocked sending at 52 (\"550 5.4.6 Unusual sending activity\", 51 in about an hour)",
+     "result": "**1 positive reply the same day**: Tim Swierczek (TCREI podcast + meetup), a call booked for 10/15. Rest pending, read 10/19",
+     "source": "`~/Desktop/msp-house-index/outreach/ledger.csv`"
+    }
+   ],
+   "past_sends": {
+    "contractors (permit pullers)|email": {
+     "sends": 8,
+     "positive": 0,
+     "negative": 0,
+     "auto": 0,
+     "silent": 8
+    },
+    "permit-gifts|email": {
+     "sends": 8,
+     "positive": 1,
+     "negative": 0,
+     "auto": 0,
+     "silent": 7
+    },
+    "wrecking-permit leads (ScrapWatch precursor)|email": {
+     "sends": 3,
+     "positive": 0,
+     "negative": 0,
+     "auto": 0,
+     "silent": 3
+    },
+    "water-parts discovery|email": {
+     "sends": 26,
+     "positive": 2,
+     "negative": 0,
+     "auto": 0,
+     "silent": 24
+    }
+   },
+   "past_sends_total": {
+    "sends": 45,
+    "positive": 3,
+    "negative": 0,
+    "auto": 0,
+    "silent": 42
+   },
+   "draft": {
+    "recipient_kind": "demolition contractor named on a recent permit",
+    "org_example": "[contractor named on the permit]",
+    "context": "Their own issued demolition permit at [address], issued [date].",
+    "subject": "Your permit at [address]",
+    "body": "The city issued a demolition permit for [address] on [date], with [contractor] named as the contractor. The building is [age, size and use from the permit]. I put new Minneapolis and Saint Paul demolition permits on one page, each with an estimate of the recoverable materials inside and the scrap contact for the winning contractor. Yours is on it, and if the scrap contact shown for [contractor] is wrong, tell me who it should be and I will fix it. It's free, no reply needed: [link]. Not selling anything. Story behind it: [Substack link]. Aidan"
+   },
+   "screen": {
+    "prediction_id": "nx_5a0586c4dd20",
+    "p_reply": 0.04,
+    "p_click": 0.22,
+    "method": "forecaster-v1"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "rule": "Open every touch on the reader's own record: the contractor's permit, the route builder's post, the neighborhood group's teardown post. Never open on the tool.",
+   "why": "Email quoting the reader's own filing got 2 replies from about 25 sends (L11), and the one post-quoted send of two drew a reply in 13 hours (L10, Y1). The 1,405 uninstrumented sends and the 23 InMails that led with us drew nothing but one 'not interested' (L1, L7).",
+   "source": "distribution-channel rule 11"
+  },
+  {
+   "rule": "Ask 'sale or visibility' before writing each batch, and do not inherit the offer line from an earlier batch. Put no comp passwords or free-access codes in a paid product's intro.",
+   "why": "The msp-house-index batch carried a free password by mistake after the offer instruction had expired when the price changed (L15).",
+   "source": "distribution-channel rule 12"
+  },
+  {
+   "rule": "Do not describe the tool as pricing copper, grading wire, giving scrap-yard etiquette, tracking street light theft, or covering permit prerequisites such as the Rat Abatement Certificate.",
+   "why": "The map lists these as jobs the tool does not do (G2, G4, G7, G8, G9), and the Rat Abatement Certificate rule is from King County, not Minneapolis or Saint Paul.",
+   "source": "G2, G4, G7, G8, G9"
+  },
+  {
+   "rule": "Use each segment's own words in copy: 'teardown blitz' for neighbors, 'scrap removal for house clean outs' for route builders, 'deconstruction' and 'salvage' for contractors.",
+   "why": "These are the phrases the segments use for themselves in the cited quotes, and each segment's copy should read as written for them.",
+   "source": "C5, C25, C12"
+  },
+  {
+   "rule": "Do not call a channel failed before it has 50 delivered recipients across 3 or more segments and three touches with reply kinds logged. Count only delivered addresses.",
+   "why": "Smaller sends are probes, not verdicts, and in the ledger 109 of 160 named PT clinics had no reachable inbox, so a send that never arrived tests nothing.",
+   "source": "BUSINESS.md rule 4"
+  },
+  {
+   "rule": "Treat the scrap contact field as unverified until a person has confirmed it. Invite corrections in the message and do not present the contact as confirmed.",
+   "why": "The tool gives the scrap contact at the winning contractor, but G11 and the ideal-field check mark that contact as only partly fillable.",
+   "source": "G11"
+  }
+ ],
+ "grounding": {
+  "map": "maps/demolition-permit-scrap-leads.json",
+  "claims_offered": 25,
+  "gaps_offered": 12,
+  "channel_ledger_rows": 17,
+  "positive_reply_rows": 4,
+  "past_send_keys": 25,
+  "iter_refs_bad": 0,
+  "verdicts_cut": [],
+  "model": "claude-sonnet-5-5"
+ },
+ "never": "No line here says whether anyone will use, buy or reply (BUSINESS.md rule 2). Screen scores rank drafts against each other; they are not a forecast of the product."
+}

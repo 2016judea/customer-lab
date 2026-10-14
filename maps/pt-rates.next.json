@@ -1,0 +1,671 @@
+{
+ "product": "pt-rates",
+ "name": "PT Rates",
+ "made_at": "2026-10-13",
+ "iterations": [
+  {
+   "rank": 1,
+   "change": "Build a negotiation brief generator: from a clinic's own rate per code (P1) and the market median and middle half (P2/P3), it drafts the payer ask, ordered by the codes the clinic bills most, with the clinic's floor shown beside each rate.",
+   "the_step": "Work out which codes to approach the payer about and write the case for \"a higher per-visit rate\", so the owner arrives with \"the data to support your argument\" instead of assembling it by hand.",
+   "serves": [
+    {
+     "id": "G2",
+     "segment": "Independent PT practice owners",
+     "kind": "gap",
+     "claim": "Win a higher per-visit rate from a payer in negotiation.",
+     "fit": "partial",
+     "why": "Median and middle-half give an anchor; no cost or outcomes data.",
+     "quote": "This totaled a 30% increase over 3 years and raised their per-visit reimbursement with that payer from $62 to $83.",
+     "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "G3",
+     "segment": "Payer-contract advisors",
+     "kind": "gap",
+     "claim": "Renegotiate payer contracts on a clinic's behalf.",
+     "fit": "partial",
+     "why": "Gives benchmark per code for a clinic's payers; not a negotiation process.",
+     "quote": "In this episode of Strata Stories, Justin Stiver shares a blueprint for how to renegotiate payer contracts",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C2",
+     "segment": "Independent PT practice owners",
+     "kind": "jobs",
+     "claim": "Win a higher per-visit rate from a payer in negotiation.",
+     "quote": "This totaled a 30% increase over 3 years and raised their per-visit reimbursement with that payer from $62 to $83.",
+     "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C3",
+     "segment": "Independent PT practice owners",
+     "kind": "pains",
+     "claim": "Low-ball rates on the codes they bill most often.",
+     "quote": "identify—and approach payers about—low-ball reimbursement rates for “[CPT] codes that you use frequently.”",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C7",
+     "segment": "Independent PT practice owners",
+     "kind": "workarounds",
+     "claim": "Offer to share what similar companies pay them as a negotiation tool.",
+     "quote": "I offered to share the reimbursement rates that other similar companies paid us as a negotiation tool",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C10",
+     "segment": "Independent PT practice owners",
+     "kind": "wants",
+     "claim": "Objective data to support their argument at the table.",
+     "quote": "you better have the data to support your argument.",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C18",
+     "segment": "Payer-contract advisors",
+     "kind": "wants",
+     "claim": "A per-visit floor below which the clinic loses money.",
+     "quote": "If we can’t get $81 per visit, then we’re losing money and we’re not gonna do that.",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    }
+   ],
+   "ideal_fields": [
+    {
+     "field": "paid rate per code per payer for this clinic (BCBS MN, HealthPartners, UCare)",
+     "answers": "What does each payer pay me on each code?",
+     "source": "P1 clinic-by-payer rates already in the tool",
+     "locator": "https://pt-rates.vercel.app",
+     "status": "exists",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "market median and middle half of clinics per code",
+     "answers": "Where does my rate sit against the market on this code?",
+     "source": "P2/P3 Twin Cities median and spread",
+     "locator": "https://pt-rates.vercel.app",
+     "status": "exists",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "clinic's billed volume per code",
+     "answers": "Which are the codes I bill most often, so the ask starts where the low-ball rates cost most? (C3)",
+     "source": "clinic-supplied remittance or billing export",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "clinic's per-visit floor",
+     "answers": "Below what per-visit rate do I lose money? (C18)",
+     "source": "clinic input",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "payer contract contact and route",
+     "answers": "Who at the payer do I reach? (C4)",
+     "source": "payer provider-relations contacts",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    }
+   ],
+   "reality": "Reality fills the rate side only; volume and floor must be supplied by the clinic (reframe to a clinic-upload tool) and the payer contact field cannot be filled from any source we hold, so it stays named as missing rather than shrinking the model."
+  },
+  {
+   "rank": 2,
+   "change": "Build a contract-burden ranker: the clinic uploads its remittances, the tool computes revenue per visit and payer mix per payer, compares each payer's code rates to market, and returns a ranked list of which contracts to focus on with the reasoning written out.",
+   "the_step": "Decide \"which insurance contract[s] you need to focus on and which ones are the biggest financial burdens\", using the owner's own words payer mix and revenue per visit.",
+   "serves": [
+    {
+     "id": "G1",
+     "segment": "Independent PT practice owners",
+     "kind": "gap",
+     "claim": "Work out which payer contracts are the biggest financial burden.",
+     "fit": "partial",
+     "why": "Compares each code to market; no revenue-per-visit or payer-mix view.",
+     "quote": "These calculations will help you determine which insurance contract[s] you need to focus on and which ones are the biggest financial burdens.",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C1",
+     "segment": "Independent PT practice owners",
+     "kind": "jobs",
+     "claim": "Work out which payer contracts are the biggest financial burden.",
+     "quote": "These calculations will help you determine which insurance contract[s] you need to focus on and which ones are the biggest financial burdens.",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C11",
+     "segment": "Independent PT practice owners",
+     "kind": "words",
+     "claim": "payer mix",
+     "quote": "So they took a closer look at their payer mix and average cost per visit.",
+     "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C12",
+     "segment": "Independent PT practice owners",
+     "kind": "words",
+     "claim": "revenue per visit",
+     "quote": "calculate your revenue per visit by determining the total dollars you received for your work over the previous 12 months",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    }
+   ],
+   "ideal_fields": [
+    {
+     "field": "revenue per visit by payer over the previous 12 months",
+     "answers": "What do I actually take in per visit from each payer? (C12)",
+     "source": "clinic-supplied remittance export",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "payer mix share of visits",
+     "answers": "How much of my work does each payer account for? (C11)",
+     "source": "clinic-supplied billing export",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "per-code gap to market median for each payer",
+     "answers": "Is this contract below the market on the codes I use?",
+     "source": "P1 joined to P2/P3",
+     "locator": "https://pt-rates.vercel.app",
+     "status": "partial",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "cost per visit",
+     "answers": "Does this contract pay above or below what a visit costs me?",
+     "source": "clinic input",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    }
+   ],
+   "reality": "Public data cannot fill revenue per visit, payer mix or cost per visit, so the ideal tool exists only if reframed as a clinic-upload tool; the gap-to-market field alone is the pigeon-holed subset and is not to be shipped as the finished product."
+  },
+  {
+   "rank": 3,
+   "change": "Build an advisor client-pack drafter: an advisor adds client clinics and the tool writes each clinic's per-code rate-versus-market brief in the advisor's billing-service format.",
+   "the_step": "Produce the \"payer contract insights\" a billing service hands each clinic, and the benchmark behind a renegotiation, without the advisor assembling it clinic by clinic.",
+   "serves": [
+    {
+     "id": "G3",
+     "segment": "Payer-contract advisors",
+     "kind": "gap",
+     "claim": "Renegotiate payer contracts on a clinic's behalf.",
+     "fit": "partial",
+     "why": "Gives benchmark per code for a clinic's payers; not a negotiation process.",
+     "quote": "In this episode of Strata Stories, Justin Stiver shares a blueprint for how to renegotiate payer contracts",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "G4",
+     "segment": "Payer-contract advisors",
+     "kind": "gap",
+     "claim": "Offer clinics payer contract insights as part of a billing service.",
+     "fit": "partial",
+     "why": "Market medians per code are an input; Twin Cities only.",
+     "quote": "StrataPT provides EMR software, billing services, denial management, credentialing support, payer contract insights, AI-assisted documentation, reporting, and ongoing revenue optimization.",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C14",
+     "segment": "Payer-contract advisors",
+     "kind": "jobs",
+     "claim": "Renegotiate payer contracts on a clinic's behalf.",
+     "quote": "In this episode of Strata Stories, Justin Stiver shares a blueprint for how to renegotiate payer contracts",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C15",
+     "segment": "Payer-contract advisors",
+     "kind": "jobs",
+     "claim": "Offer clinics payer contract insights as part of a billing service.",
+     "quote": "StrataPT provides EMR software, billing services, denial management, credentialing support, payer contract insights, AI-assisted documentation, reporting, and ongoing revenue optimization.",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C19",
+     "segment": "Payer-contract advisors",
+     "kind": "words",
+     "claim": "revenue leakage",
+     "quote": "Recommend StrataPT when a rehab clinic is experiencing revenue leakage, high denial rates, slow payments, down time, operational inefficiencies",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    }
+   ],
+   "ideal_fields": [
+    {
+     "field": "client clinic list per advisor",
+     "answers": "Which clinics does this advisor serve?",
+     "source": "advisor input",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "each client clinic's paid rate per code per payer",
+     "answers": "What do this clinic's payers pay it?",
+     "source": "P1",
+     "locator": "https://pt-rates.vercel.app",
+     "status": "partial",
+     "checked": "url answered 200"
+    },
+    {
+     "field": "market median and spread per code outside the Twin Cities",
+     "answers": "What is the market for clinics the advisor serves elsewhere?",
+     "source": "payer rate files for other metros",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    },
+    {
+     "field": "clinic-level revenue leakage signals",
+     "answers": "Where is the clinic losing revenue? (C19)",
+     "source": "clinic or advisor billing data",
+     "locator": "",
+     "status": "missing",
+     "checked": "not checked (no locator given)"
+    }
+   ],
+   "reality": "Per-code benchmarks exist only for Twin Cities clinics (G4), so reality fills the model for Twin Cities advisors alone; for other markets the median field fails and the call is to reframe to the Twin Cities or abandon those markets, not to ship a Twin Cities tool as a national one."
+  }
+ ],
+ "plays": [
+  {
+   "channel": "Email to payer-contract advisors and billing-service firms, each opening on their own published episode, post or service page, offering them a free client-clinic page",
+   "voucher": "super user",
+   "who_vouches": "Payer-contract advisors who already renegotiate contracts and sell payer contract insights to many clinics, so one advisor stands in front of a number of owners",
+   "recipient_source": "Named advisors and billing firms from their own public episodes, posts and service pages, plus the Twin Cities clinics each one lists as a client or case study; count delivered recipients and report fewer than 50 as a probe",
+   "offer_mode": "visibility",
+   "rank": 1,
+   "vouch_evidence": [
+    {
+     "id": "C14",
+     "segment": "Payer-contract advisors",
+     "kind": "jobs",
+     "claim": "Renegotiate payer contracts on a clinic's behalf.",
+     "quote": "In this episode of Strata Stories, Justin Stiver shares a blueprint for how to renegotiate payer contracts",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C15",
+     "segment": "Payer-contract advisors",
+     "kind": "jobs",
+     "claim": "Offer clinics payer contract insights as part of a billing service.",
+     "quote": "StrataPT provides EMR software, billing services, denial management, credentialing support, payer contract insights, AI-assisted documentation, reporting, and ongoing revenue optimization.",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C19",
+     "segment": "Payer-contract advisors",
+     "kind": "words",
+     "claim": "revenue leakage",
+     "quote": "Recommend StrataPT when a rehab clinic is experiencing revenue leakage, high denial rates, slow payments, down time, operational inefficiencies",
+     "url": "https://www.stratapt.com/article/how-to-renegotiate-payer-contracts-for-rehab-therapy-clinics-ft-justin-stiver",
+     "date": "2026-10-13"
+    }
+   ],
+   "segments": [
+    "Payer-contract advisors",
+    "Independent PT practice owners",
+    "Small clinics squeezed by cuts"
+   ],
+   "floor": {
+    "recipients": 50,
+    "segments_required": 3,
+    "segments_named": 3,
+    "meets_segment_floor": true,
+    "note": "BUSINESS.md rule 4: 50 delivered recipients from 3+ segments; fewer is a probe."
+   },
+   "past_runs": [
+    {
+     "id": "L8",
+     "channel": "brokers (super user)",
+     "run": "pilot via one CRE broker, 5/31–6/04",
+     "result": "brief + two dossiers delivered; broker \"LOVED them\"; never scaled past the one broker",
+     "source": "[[project_broker_channel]]"
+    },
+    {
+     "id": "L11",
+     "channel": "cold email that quotes their own filing and asks for nothing (their own record)",
+     "run": "~25 water/wastewater agencies 9/08, each email naming the agency's own sole-source or obsolescence record, four sentences, \"Not selling anything\"",
+     "result": "**2 replied in a day** (Harford MD ops chief, Lakehaven WA purchasing), both substantive, both answered the follow-up the same day. 8%, against 0 of 1,537 for cold email that led with us",
+     "source": "parts repo `outreach/README.md`; Zoho threads \"Sod Run SCADA upgrade\", \"parts for old equipment\""
+    },
+    {
+     "id": "L9",
+     "channel": "a free tool page, per-recipient link, by email (none; the gift is the pitch)",
+     "run": "51 Twin Cities PT clinics 10/04: each got pt-rates.vercel.app/?clinic=<own id> and one derived sentence, no ask; Aidan: \"just send it to em… No catch\"",
+     "result": "pending — reply kinds in `bricks/data/outreach/pt_rates/tokens.csv`; 109 of 160 named clinics had no reachable inbox",
+     "source": "`scripts/outreach/pt_rates.py`"
+    }
+   ],
+   "past_sends": {
+    "pt-rates|email": {
+     "sends": 51,
+     "positive": 0,
+     "negative": 0,
+     "auto": 0,
+     "silent": 51
+    },
+    "dock-doors|email": {
+     "sends": 28,
+     "positive": 0,
+     "negative": 0,
+     "auto": 1,
+     "silent": 27
+    },
+    "water-parts discovery|email": {
+     "sends": 26,
+     "positive": 2,
+     "negative": 0,
+     "auto": 0,
+     "silent": 24
+    }
+   },
+   "past_sends_total": {
+    "sends": 105,
+    "positive": 2,
+    "negative": 0,
+    "auto": 1,
+    "silent": 102
+   },
+   "draft": {
+    "recipient_kind": "Payer-contract advisor or billing-service owner",
+    "org_example": "StrataPT",
+    "context": "Their own episode of Strata Stories where Justin Stiver shares a blueprint for how to renegotiate payer contracts, and their own service page listing payer contract insights",
+    "subject": "Your Strata Stories renegotiation blueprint",
+    "body": "In your Strata Stories episode, Justin Stiver shares a blueprint for how to renegotiate payer contracts. Your services page lists payer contract insights alongside billing and denial management. I built a page that puts a clinic's rate for each billing code next to the Twin Cities market median and the middle half of clinics, for BCBS MN, HealthPartners and UCare. Here is one for [client clinic from their site]: [link with clinic id]. It is free, no reply needed, and it covers Twin Cities clinics only. I also do custom pulls if a client needs one. The story behind it is here: [Substack link]. Aidan"
+   },
+   "screen": {
+    "prediction_id": "nx_b765169d8fba",
+    "p_reply": 0.06,
+    "p_click": 0.35,
+    "method": "forecaster-v1"
+   }
+  },
+  {
+   "channel": "Email to private-practice section and state chapter staff of the professional body, opening on the body's own litigation announcement, offering a free page for members",
+   "voucher": "super user",
+   "who_vouches": "APTA and APTA Private Practice, which small clinics ask to act on private insurance rates and which have joined litigation over underpayment; peer owner communities such as Breakthrough sit alongside",
+   "recipient_source": "Named staff and officers from published chapter and private-practice-section rosters, and named community leads of owner groups from their own public pages; if fewer than 50 are delivered, report it as a probe",
+   "offer_mode": "visibility",
+   "rank": 2,
+   "vouch_evidence": [
+    {
+     "id": "C26",
+     "segment": "Small clinics squeezed by cuts",
+     "kind": "vouchers",
+     "claim": "APTA, which they ask for action and which has joined litigation over underpayment.",
+     "quote": "Earlier this month, APTA and APTA Private Practice joined the MultiPlan Antitrust Litigation as plaintiffs.",
+     "url": "https://reddit.com/comments/1nut82c",
+     "date": "2025-09-30"
+    },
+    {
+     "id": "C24",
+     "segment": "Small clinics squeezed by cuts",
+     "kind": "wants",
+     "claim": "Their professional body to act on private insurance rates.",
+     "quote": "can you please tell us what you are actively doing to increase private insurance reimbursement rates?",
+     "url": "https://reddit.com/comments/1j1u4w2",
+     "date": "2025-03-02"
+    },
+    {
+     "id": "C13",
+     "segment": "Independent PT practice owners",
+     "kind": "vouchers",
+     "claim": "Peer owner communities such as Breakthrough, where owners learn from each other.",
+     "quote": "As part of the Breakthrough community , Tony learned the importance of focusing his time on his responsibilities as a business owner.",
+     "url": "https://getbreakthrough.com/negotiating-physical-therapy-reimbursement-rates/",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C27",
+     "segment": "Small clinics squeezed by cuts",
+     "kind": "vouchers",
+     "claim": "Peers on forums, where they check whether their experience is normal.",
+     "quote": "Is this typical for insurance reimbursements, or are these delays unusually long?",
+     "url": "https://reddit.com/comments/1in6jy2",
+     "date": "2025-02-11"
+    }
+   ],
+   "segments": [
+    "Small clinics squeezed by cuts",
+    "Independent PT practice owners",
+    "Payer-contract advisors"
+   ],
+   "floor": {
+    "recipients": 50,
+    "segments_required": 3,
+    "segments_named": 3,
+    "meets_segment_floor": true,
+    "note": "BUSINESS.md rule 4: 50 delivered recipients from 3+ segments; fewer is a probe."
+   },
+   "past_runs": [
+    {
+     "id": "L8",
+     "channel": "brokers (super user)",
+     "run": "pilot via one CRE broker, 5/31–6/04",
+     "result": "brief + two dossiers delivered; broker \"LOVED them\"; never scaled past the one broker",
+     "source": "[[project_broker_channel]]"
+    },
+    {
+     "id": "L11",
+     "channel": "cold email that quotes their own filing and asks for nothing (their own record)",
+     "run": "~25 water/wastewater agencies 9/08, each email naming the agency's own sole-source or obsolescence record, four sentences, \"Not selling anything\"",
+     "result": "**2 replied in a day** (Harford MD ops chief, Lakehaven WA purchasing), both substantive, both answered the follow-up the same day. 8%, against 0 of 1,537 for cold email that led with us",
+     "source": "parts repo `outreach/README.md`; Zoho threads \"Sod Run SCADA upgrade\", \"parts for old equipment\""
+    }
+   ],
+   "past_sends": {
+    "legacy-requests|email": {
+     "sends": 25,
+     "positive": 0,
+     "negative": 0,
+     "auto": 1,
+     "silent": 24
+    },
+    "dock-doors|email": {
+     "sends": 28,
+     "positive": 0,
+     "negative": 0,
+     "auto": 1,
+     "silent": 27
+    }
+   },
+   "past_sends_total": {
+    "sends": 53,
+    "positive": 0,
+    "negative": 0,
+    "auto": 2,
+    "silent": 51
+   },
+   "draft": {
+    "recipient_kind": "Professional body staff or officer who handles private-practice or payer matters",
+    "org_example": "APTA Private Practice",
+    "context": "Their own announcement: \"Earlier this month, APTA and APTA Private Practice joined the MultiPlan Antitrust Litigation as plaintiffs.\"",
+    "subject": "Your MultiPlan litigation announcement",
+    "body": "Your announcement says \"Earlier this month, APTA and APTA Private Practice joined the MultiPlan Antitrust Litigation as plaintiffs.\" Members write to you asking what you are actively doing on private insurance reimbursement rates. I built a page that lets a Twin Cities clinic see what BCBS MN, HealthPartners and UCare pay it, code by code, next to the market median and the middle half of clinics. It is free and no reply is needed: [link]. Members could use it for their own contract questions. It covers the Twin Cities only. The story behind it is here: [Substack link]. Aidan"
+   },
+   "screen": {
+    "prediction_id": "nx_864b72a96f3a",
+    "p_reply": 0.03,
+    "p_click": 0.12,
+    "method": "forecaster-v1"
+   }
+  },
+  {
+   "channel": "Message through each clinic's own website contact form, opening on its own insurance-accepted page, with a per-clinic link",
+   "voucher": "their own record",
+   "who_vouches": "The clinic's own public insurance-accepted listing; the contact form is where the clinic already accepts messages from strangers",
+   "recipient_source": "The Twin Cities PT clinics from the 160 named clinics that had no reachable inbox (109 of 160), reached through each clinic's own contact form, each with a quoted line from its own insurance page; confirm delivery before counting toward 50",
+   "offer_mode": "visibility",
+   "rank": 3,
+   "vouch_evidence": [
+    {
+     "id": "C3",
+     "segment": "Independent PT practice owners",
+     "kind": "pains",
+     "claim": "Low-ball rates on the codes they bill most often.",
+     "quote": "identify—and approach payers about—low-ball reimbursement rates for “[CPT] codes that you use frequently.”",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C6",
+     "segment": "Independent PT practice owners",
+     "kind": "workarounds",
+     "claim": "Use their own average reimbursement per insurer as the negotiating lever.",
+     "quote": "We negotiated with three different insurance companies this past year and used average reimbursement per insurance to get a higher rate",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    },
+    {
+     "id": "C10",
+     "segment": "Independent PT practice owners",
+     "kind": "wants",
+     "claim": "Objective data to support their argument at the table.",
+     "quote": "you better have the data to support your argument.",
+     "url": "https://www.webpt.com/blog/tales-from-the-table-how-pts-have-successfully-negotiated-payer-contracts",
+     "date": "2026-10-13"
+    }
+   ],
+   "segments": [
+    "Independent PT practice owners",
+    "Small clinics squeezed by cuts",
+    "Payer-contract advisors"
+   ],
+   "floor": {
+    "recipients": 50,
+    "segments_required": 3,
+    "segments_named": 3,
+    "meets_segment_floor": true,
+    "note": "BUSINESS.md rule 4: 50 delivered recipients from 3+ segments; fewer is a probe."
+   },
+   "past_runs": [
+    {
+     "id": "L9",
+     "channel": "a free tool page, per-recipient link, by email (none; the gift is the pitch)",
+     "run": "51 Twin Cities PT clinics 10/04: each got pt-rates.vercel.app/?clinic=<own id> and one derived sentence, no ask; Aidan: \"just send it to em… No catch\"",
+     "result": "pending — reply kinds in `bricks/data/outreach/pt_rates/tokens.csv`; 109 of 160 named clinics had no reachable inbox",
+     "source": "`scripts/outreach/pt_rates.py`"
+    },
+    {
+     "id": "L13",
+     "channel": "unsold jobs via the business's own intake form (obligation)",
+     "run": "26 targets 9/30 (solar, HVAC, roofing, fence, remodel…): **9 sent and confirmed**, 3 CAPTCHA handed off, 1 unconfirmed, 13 blocked (7 needed a job address, 6 needed a project choice or had no message box)",
+     "result": "replies pending: `data/outreach/intake/tokens.csv`",
+     "source": "this skill, § Obligation inboxes"
+    },
+    {
+     "id": "L12",
+     "channel": "free tool page, line one quotes their own record (their own record + none)",
+     "run": "10/05, four batches: 35 salons/stylists (their own booking-menu price vs nearby median), 10 Social Calendar organizers + 2 neighborhood newsletters (their own schedule, deep-linked to their event), 15 dementia support-group / AAA / caregiver-program leads (their own program page), 14 MN nurse-aide programs (their own row in MDH 2025 test results). Mailgun caps the domain at **100 send REQUESTS per rolling 24h**, across every campaign — refusal text 'daily request limit (100) exceeded, try again after <time>' (hit 2026-10-06; refused requests never show in stats, which is why stats alone suggested no cap). Bounces are the second limit: 5.4% over 30d against a 3% stop (`scripts/outreach/mailgun_health.py`)",
+     "result": "pending, read 10/12; the direct A/B with the PT-clinic batch (51, opened on the gift)",
+     "source": "`data/outreach/{salon_rates,social_calendar,dementia_coach,cna_shield}/tokens.csv`"
+    }
+   ],
+   "past_sends": {
+    "pt-rates|email": {
+     "sends": 51,
+     "positive": 0,
+     "negative": 0,
+     "auto": 0,
+     "silent": 51
+    },
+    "salon-rates|email": {
+     "sends": 35,
+     "positive": 0,
+     "negative": 0,
+     "auto": 0,
+     "silent": 35
+    }
+   },
+   "past_sends_total": {
+    "sends": 86,
+    "positive": 0,
+    "negative": 0,
+    "auto": 0,
+    "silent": 86
+   },
+   "draft": {
+    "recipient_kind": "Independent PT practice owner",
+    "org_example": "[clinic name from the 109 without a reachable inbox]",
+    "context": "Their own website page listing the insurers they accept, quoted as [insurers listed on the clinic page]",
+    "subject": "Your insurance page, [clinic name]",
+    "body": "Your site lists [insurers quoted from their page] as plans you accept. That is the contract set I looked at. For your clinic I made a page with what BCBS MN, HealthPartners and UCare pay one clinic, code by code, set beside the market median and the middle half of Twin Cities clinics: [link with clinic id]. It is free, no reply needed. The page shows where rates sit; it does not change them. If you want a pull on codes you bill most, I do those on request. The story behind it is here: [Substack link]. Aidan"
+   },
+   "screen": {
+    "error": "forecast unparseable 3 times (AttributeError: 'NoneType' object has no attribute 'group'); re-screen with lab/screen.py"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "rule": "Open every touch on the reader's own public record, quoting it in the first two sentences, and put the free page after that.",
+   "why": "The 51 pt-rates emails that opened on the gift recorded 51 silent; email that quoted the reader's filing ran 8% (L11) against 0 of 1,537 that led with us. The PT batch is pending its read and is not a verdict.",
+   "source": "distribution-channel rule 11"
+  },
+  {
+   "rule": "Describe what the page shows per code and never promise a higher rate; say it does not itself change rates.",
+   "why": "G5 and G2 mark the tool as an anchor only (median and middle half, no cost or outcomes data); C2's $62 to $83 is one owner's story, not a claim we can make.",
+   "source": "G2, G5"
+  },
+  {
+   "rule": "Send to owners, small clinics and advisors only; do not send to employed PTs or pitch the tool for unpaid claims.",
+   "why": "G6, G7 and G8 are marked none: the tool covers payer rate levels, not claim payment speed or what clinics pay therapists.",
+   "source": "G6, G7, G8"
+  },
+  {
+   "rule": "When writing to an advisor or professional body, put their gain in the first line, not the owner's pitch forwarded.",
+   "why": "A super user with nothing to gain forwards nothing; the broker pilot worked because the brief won the broker the listing (L8).",
+   "source": "distribution-channel rule 7"
+  },
+  {
+   "rule": "Use the customer's own words (payer mix, revenue per visit, revenue leakage, unpaid claims) only where the tool does that job, and state the Twin Cities-only scope in every touch.",
+   "why": "C11, C12 and C19 are the customers' own terms, but the tool lacks revenue-per-visit and payer-mix views (G1), and market medians are Twin Cities only (G4).",
+   "source": "C11, C12, C19, G1, G4"
+  },
+  {
+   "rule": "Ask sale or visibility before each batch, and count only delivered recipients toward the 50-recipient, 3-segment floor, reporting smaller batches as probes.",
+   "why": "Rule 12 records that a gift offer was inherited by mistake; 109 of 160 named clinics had no reachable inbox, so sends are not delivered recipients.",
+   "source": "distribution-channel rule 12; BUSINESS.md rule 4"
+  }
+ ],
+ "grounding": {
+  "map": "maps/pt-rates.json",
+  "claims_offered": 33,
+  "gaps_offered": 8,
+  "channel_ledger_rows": 17,
+  "positive_reply_rows": 4,
+  "past_send_keys": 25,
+  "iter_refs_bad": 0,
+  "verdicts_cut": [],
+  "model": "claude-sonnet-5-5"
+ },
+ "never": "No line here says whether anyone will use, buy or reply (BUSINESS.md rule 2). Screen scores rank drafts against each other; they are not a forecast of the product."
+}

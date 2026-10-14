@@ -3,33 +3,161 @@
     "name": "Salon Prices",
     "live_url": "https://salon-rates.vercel.app",
     "one_liner": "What everyone in your sector is charging for a given service.",
-    "dataset_products": ["salon-rates"],
+    "dataset_products": [
+      "salon-rates"
+    ],
     "steps": [
-      {"id": "S1", "verb_object": "says whether your price for a service is high or low for your area (My shop)", "url": "https://salon-rates.vercel.app"},
-      {"id": "S2", "verb_object": "lists what shops near you charge for one service, filtered by size, stylist level and distance", "url": "https://salon-rates.vercel.app"}
+      {
+        "id": "S1",
+        "verb_object": "says whether your price for a service is high or low for your area (My shop)",
+        "url": "https://salon-rates.vercel.app"
+      },
+      {
+        "id": "S2",
+        "verb_object": "lists what shops near you charge for one service, filtered by size, stylist level and distance",
+        "url": "https://salon-rates.vercel.app"
+      }
     ]
   },
   "pt-rates": {
     "name": "PT Rates",
     "live_url": "https://pt-rates.vercel.app",
     "one_liner": "What everyone in your sector is charging for a given service.",
-    "dataset_products": ["pt-rates"],
+    "dataset_products": [
+      "pt-rates"
+    ],
     "steps": [
-      {"id": "P1", "verb_object": "shows what BCBS MN, HealthPartners and UCare pay one clinic, code by code", "url": "https://pt-rates.vercel.app"},
-      {"id": "P2", "verb_object": "puts each code's rate next to the market median and the middle half of clinics", "url": "https://pt-rates.vercel.app"},
-      {"id": "P3", "verb_object": "lists the market median per billing code across Twin Cities clinics", "url": "https://pt-rates.vercel.app"}
+      {
+        "id": "P1",
+        "verb_object": "shows what BCBS MN, HealthPartners and UCare pay one clinic, code by code",
+        "url": "https://pt-rates.vercel.app"
+      },
+      {
+        "id": "P2",
+        "verb_object": "puts each code's rate next to the market median and the middle half of clinics",
+        "url": "https://pt-rates.vercel.app"
+      },
+      {
+        "id": "P3",
+        "verb_object": "lists the market median per billing code across Twin Cities clinics",
+        "url": "https://pt-rates.vercel.app"
+      }
     ]
   },
   "obsolete-parts": {
     "name": "Legacy Requests (obsolete parts)",
     "live_url": "https://legacy-requests.vercel.app",
     "one_liner": "Models demand from government RFPs. And supply from 3P vendors on places like ebay and online auction houses.",
-    "dataset_products": ["water-parts discovery", "legacy-requests", "parts concierge", "parts dealers ($500 buyer report)"],
+    "dataset_products": [
+      "water-parts discovery",
+      "legacy-requests",
+      "parts concierge",
+      "parts dealers ($500 buyer report)"
+    ],
     "steps": [
-      {"id": "L1", "verb_object": "lists the makes and parts government agencies keep filing to buy, each linked to the agency's own filing", "url": "https://legacy-requests.vercel.app"},
-      {"id": "L2", "verb_object": "flags the same buyer asking for the same part number again, months or years apart", "url": "https://legacy-requests.vercel.app"},
-      {"id": "L3", "verb_object": "'Find it': links a part to listings for sale (eBay, GovDeals, PublicSurplus), its manual, and who services it", "url": "https://legacy-requests.vercel.app"},
-      {"id": "L4", "verb_object": "hands a dealer every agency that filed for a model the dealer has listed (/for/<token>/ pages)", "url": "https://legacy-requests.vercel.app"}
+      {
+        "id": "L1",
+        "verb_object": "lists the makes and parts government agencies keep filing to buy, each linked to the agency's own filing",
+        "url": "https://legacy-requests.vercel.app"
+      },
+      {
+        "id": "L2",
+        "verb_object": "flags the same buyer asking for the same part number again, months or years apart",
+        "url": "https://legacy-requests.vercel.app"
+      },
+      {
+        "id": "L3",
+        "verb_object": "'Find it': links a part to listings for sale (eBay, GovDeals, PublicSurplus), its manual, and who services it",
+        "url": "https://legacy-requests.vercel.app"
+      },
+      {
+        "id": "L4",
+        "verb_object": "hands a dealer every agency that filed for a model the dealer has listed (/for/<token>/ pages)",
+        "url": "https://legacy-requests.vercel.app"
+      }
     ]
+  },
+  "demolition-permit-scrap-leads": {
+    "name": "Demolition Notice",
+    "live_url": "https://demolition-notice.vercel.app",
+    "one_liner": "Tracks Minneapolis and Saint Paul demolition permits, estimates what materials are inside each building, shows which contractor won the job, and who to contact about scrap.",
+    "idea": "What buildings are being knocked down in Minneapolis Saint Paul based on city demolition permits. What is likely to be inside. Which construction company has won the contract (and who to contact for scrapping).",
+    "dataset_products": [],
+    "steps": [
+      {
+        "id": "N1",
+        "verb_object": "Find newly issued demolition permits for buildings in Minneapolis and Saint Paul",
+        "url": "https://demolition-notice.vercel.app"
+      },
+      {
+        "id": "N2",
+        "verb_object": "Estimate the recoverable materials inside each building from its age, size, and use",
+        "url": "https://demolition-notice.vercel.app"
+      },
+      {
+        "id": "N3",
+        "verb_object": "Identify the winning demolition contractor and the contact for scrap and salvage",
+        "url": "https://demolition-notice.vercel.app"
+      }
+    ],
+    "sources": {
+      "subreddits": [
+        {
+          "sub": "scrapmetal",
+          "speaker": "scrap metal dealer or scrapper looking for demolition sources"
+        },
+        {
+          "sub": "Scrap_Metal",
+          "speaker": "independent scrapper or hauler asking where to find demo jobs"
+        },
+        {
+          "sub": "Construction",
+          "speaker": "contractor or estimator discussing demolition bids and salvage"
+        },
+        {
+          "sub": "Minneapolis",
+          "speaker": "local resident tracking teardowns and neighborhood demolitions"
+        },
+        {
+          "sub": "saintpaul",
+          "speaker": "local resident following building demolitions in Saint Paul"
+        },
+        {
+          "sub": "Salvage",
+          "speaker": "architectural salvage buyer or reclaimer hunting for buildings to strip"
+        }
+      ],
+      "keywords": [
+        "demolition permit",
+        "demo permit",
+        "building being torn down",
+        "scrap from demolition",
+        "who got the demo contract",
+        "demolition contractor",
+        "salvage rights",
+        "scrap metal leads",
+        "copper wiring",
+        "structural steel scrap",
+        "architectural salvage",
+        "teardown",
+        "deconstruction",
+        "demo bid",
+        "where to find scrap jobs"
+      ],
+      "web": [
+        {
+          "url": "https://www.scrapmonster.com/forum",
+          "speaker": "scrap dealers and scrappers on a trade forum"
+        },
+        {
+          "url": "https://www.nationaldemolition.org",
+          "speaker": "National Demolition Association, trade association for demolition contractors"
+        },
+        {
+          "url": "https://www.isri.org",
+          "speaker": "ReMA (Recycled Materials Association), trade association for scrap recyclers"
+        }
+      ]
+    }
   }
 }

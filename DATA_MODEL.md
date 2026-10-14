@@ -126,3 +126,19 @@ source we can reach today.
 The fields that fail (how_many, delivered, opened, most vouchers) do not change the thesis:
 the map still answers *who, how they differ, what they need, what our tool does*. how_many is
 the one to fill next, from registers, never from a model.
+
+## Next steps (added 2026-10-13, `lab/next.py`)
+
+Aidan, 10/13: *"What im looking for is new iterations of a given product. And different
+distributions and rules surrounding sales and marketing."* Written from that need:
+
+| entity | fields | question it answers |
+|---|---|---|
+| Iteration | change, the_step, serves[] → Job/Gap claim (quote+url), ideal_fields[] {field, answers, source, locator, status, checked}, reality | what do we build next, which cited job does it close, can reality fill it |
+| Play | channel, voucher, who_vouches, vouch_evidence[] → claim, segments[] (floor 3), recipient_source, offer_mode, past_runs[] → channel ledger row, past_sends{} (counted), draft, screen → Prediction | where does a stranger read us, who vouches, what happened the last times we ran it |
+| SalesRule | rule, why, source | what we must always / never do selling this product |
+
+Reality check: claims and gaps come from the verified map; channel runs from the
+distribution-channel ledger table (parsed, not retyped); send counts from
+`panel-backtest/dataset.jsonl` + live screens. What reality can't fill: whether a field the
+model names actually holds the data — only that its path exists or URL answers is checked.
