@@ -28,12 +28,13 @@ def calibration_rows():
     rows = [r for r in joined() if r["outcome"] is not None]
     rows.sort(key=lambda r: -r["p_reply"])
     n = len(rows)
-    out = []
+    out, end = [], 0
     for name, lo, hi in (("Top 10%", 0, .1), ("Next 15%", .1, .25), ("Next 25%", .25, .5), ("Bottom half", .5, 1)):
         # Same bounds as outcomes.report(): a bucket holds at least one send, so a ledger under
         # 10 rows no longer leaves the top tenth empty and divides by zero.
-        a = min(int(lo * n), n)
-        b = rows[a:max(int(hi * n), a + 1)] if hi < 1 else rows[a:]
+        a = max(int(lo * n), end)
+        end = n if hi >= 1 else min(n, max(int(hi * n), a + 1))
+        b = rows[a:end]
         if not b:
             continue
         out.append({"name": name, "n": len(b), "pred": sum(r["p_reply"] for r in b) / len(b),
