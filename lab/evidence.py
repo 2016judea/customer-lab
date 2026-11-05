@@ -30,8 +30,8 @@ from common import EVIDENCE, ROOT, norm  # noqa: E402
 
 HOME = pathlib.Path.home()
 RAW = ROOT / "data" / "raw"
-PARTS = HOME / "Desktop/the-google-of-obsolete-infrastructure-parts"
-SALON_DB = HOME / "Desktop/salon-rates/pipeline/salon.db"
+PARTS = HOME / "Desktop/workspace/the-google-of-obsolete-infrastructure-parts"
+SALON_DB = HOME / "Desktop/workspace/salon-rates/pipeline/salon.db"
 
 REDDIT = {"salon-rates": "salon", "pt-rates": "pt", "obsolete-parts": "water"}
 WEB = {

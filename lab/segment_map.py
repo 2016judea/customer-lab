@@ -77,7 +77,7 @@ def facts(product):
                     "text": f"{kind}: we emailed {n}, {c['positive_reply']} replied with substance",
                     "source": "panel-backtest/dataset.jsonl"})
     if product == "salon-rates":
-        db = sqlite3.connect(f"file:{HOME}/Desktop/salon-rates/pipeline/salon.db?mode=ro", uri=True)
+        db = sqlite3.connect(f"file:{HOME}/Desktop/workspace/salon-rates/pipeline/salon.db?mode=ro", uri=True)
         q = """select b.business_type, count(distinct b.business_id),
                       sum(l.price_type='fixed'), sum(l.price_type='from'), sum(l.price_type in ('range','consult')), count(*)
                from business b join service_listing l using(business_id) group by 1 order by 2 desc"""

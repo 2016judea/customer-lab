@@ -332,7 +332,7 @@
      "id": "L10",
      "channel": "free counterparty list by email (their own record + none)",
      "run": "7 sent 9/28 to businesses picked from a database, no ask; 2 sent 10/04 to businesses found by their OWN Craigslist post, the post quoted in line one",
-     "result": "**1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, \"this certainly got my attention… extremely clever\". The 7 picked from a database: silence. `~/Desktop/on-the-house/drafts/permits/README.md`",
+     "result": "**1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, \"this certainly got my attention… extremely clever\". The 7 picked from a database: silence. `~/Desktop/workspace/on-the-house/drafts/permits/README.md`",
      "source": "`counterparty-gift` skill"
     },
     {
@@ -463,7 +463,7 @@
      "id": "L10",
      "channel": "free counterparty list by email (their own record + none)",
      "run": "7 sent 9/28 to businesses picked from a database, no ask; 2 sent 10/04 to businesses found by their OWN Craigslist post, the post quoted in line one",
-     "result": "**1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, \"this certainly got my attention… extremely clever\". The 7 picked from a database: silence. `~/Desktop/on-the-house/drafts/permits/README.md`",
+     "result": "**1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, \"this certainly got my attention… extremely clever\". The 7 picked from a database: silence. `~/Desktop/workspace/on-the-house/drafts/permits/README.md`",
      "source": "`counterparty-gift` skill"
     },
     {
@@ -478,14 +478,14 @@
      "channel": "own-quote cold email + channel pitches (their own record + obligation)",
      "run": "Dock Doors 10/06: 28 operators, each email opening on a verbatim quote they gave a podcast or trade magazine, mapped to one door, no ask; plus 13 pitches each opening on the inbox's own published call (SCMR, Supply Chain Xchange, DC Velocity, Inbound Logistics, PARCEL, IWLA, WERC Midwest, UMN CTS, Enterprise MN, 3 podcasts, On the Seams) and 1 GitHub PR + 1 issue. 26 of 28 operator addresses were pattern guesses",
      "result": "pending, readout 10/13",
-     "source": "`~/Desktop/dock-doors/research/outreach/`"
+     "source": "`~/Desktop/workspace/dock-doors/research/outreach/`"
     },
     {
      "id": "L15",
      "channel": "cold email, their own deed or post + free comp password (their own record; a gift by mistake)",
      "run": "msp-house-index batch 1, 10/12: **51 sent** to Twin Cities investors, agents and writers, each carrying a free `comp:` password, which was a mistake (rule 12). 3 bounced; Zoho blocked sending at 52 (\"550 5.4.6 Unusual sending activity\", 51 in about an hour)",
      "result": "**1 positive reply the same day**: Tim Swierczek (TCREI podcast + meetup), a call booked for 10/15. Rest pending, read 10/19",
-     "source": "`~/Desktop/msp-house-index/outreach/ledger.csv`"
+     "source": "`~/Desktop/workspace/msp-house-index/outreach/ledger.csv`"
     }
    ],
    "past_sends": {

@@ -1,4 +1,4 @@
-"""Shared paths, keys and the Claude client. Keys come from ~/Desktop/bricks/.env (the keyring)."""
+"""Shared paths, keys and the Claude client. Keys come from ~/Desktop/workspace/bricks/.env (the keyring)."""
 import json
 import os
 import pathlib
@@ -12,7 +12,7 @@ EVIDENCE = ROOT / "data" / "evidence"
 MAPS = ROOT / "maps"
 SPEND = LEDGER / "model_spend.jsonl"
 
-ENV = pathlib.Path.home() / "Desktop/bricks/.env"
+ENV = pathlib.Path.home() / "Desktop/workspace/bricks/.env"
 
 SONNET = "claude-sonnet-5-5"
 HAIKU = "claude-haiku-5-5"

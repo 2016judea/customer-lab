@@ -29,8 +29,8 @@ from common import OUTCOMES, PREDICTIONS, append_jsonl, auc, load_env, read_json
 HOME = pathlib.Path.home()
 BACKTEST = HOME / "Desktop/panel-backtest"
 MAIL = HOME / "Library/Mail/V10/MailData/Envelope Index"
-LEDGER_GLOBS = [HOME / "Desktop/bricks/data/outreach", HOME / "Desktop/the-google-of-obsolete-infrastructure-parts/outreach",
-                HOME / "Desktop/msp-house-index/outreach"]
+LEDGER_GLOBS = [HOME / "Desktop/workspace/bricks/data/outreach", HOME / "Desktop/workspace/the-google-of-obsolete-infrastructure-parts/outreach",
+                HOME / "Desktop/workspace/msp-house-index/outreach"]
 AUTO = re.compile(r"automatic reply|auto(-| )?reply|out of (the )?office|ooo|away from|vacation|"
                   r"we received your|ticket|delivery status|undeliverable|returned mail", re.I)
 POSITIVE = {"positive_reply", "reply_unlabelled"}  # an unlabelled human reply counts until labelled

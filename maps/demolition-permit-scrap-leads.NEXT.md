@@ -80,7 +80,7 @@ _2026-10-13 · `lab/next.py` · from `maps/demolition-permit-scrap-leads.json`. 
 - `wrecking-permit leads (ScrapWatch precursor)|email`: 3 sent, 0 positive, 0 negative, 3 silent
 - `social-calendar|email`: 9 sent, 1 positive, 0 negative, 8 silent
 - L8 brokers (super user): brief + two dossiers delivered; broker "LOVED them"; never scaled past the one broker
-- L10 free counterparty list by email (their own record + none): **1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, "this certainly got my attention… extremely clever". The 7 picked from a database: silence. `~/Desktop/on-the-house/drafts/permits/README.md`
+- L10 free counterparty list by email (their own record + none): **1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, "this certainly got my attention… extremely clever". The 7 picked from a database: silence. `~/Desktop/workspace/on-the-house/drafts/permits/README.md`
 - L11 cold email that quotes their own filing and asks for nothing (their own record): **2 replied in a day** (Harford MD ops chief, Lakehaven WA purchasing), both substantive, both answered the follow-up the same day. 8%, against 0 of 1,537 for cold email that led with us
 - L12 free tool page, line one quotes their own record (their own record + none): pending, read 10/12; the direct A/B with the PT-clinic batch (51, opened on the gift)
 
@@ -111,7 +111,7 @@ Screen (forecaster-v1 (max_tokens 400)): P(reply) 7%, P(click) 22%; logged as `n
 - `wrecking-permit leads (ScrapWatch precursor)|email`: 3 sent, 0 positive, 0 negative, 3 silent
 - `water-parts discovery|email`: 26 sent, 2 positive, 0 negative, 24 silent
 - L11 cold email that quotes their own filing and asks for nothing (their own record): **2 replied in a day** (Harford MD ops chief, Lakehaven WA purchasing), both substantive, both answered the follow-up the same day. 8%, against 0 of 1,537 for cold email that led with us
-- L10 free counterparty list by email (their own record + none): **1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, "this certainly got my attention… extremely clever". The 7 picked from a database: silence. `~/Desktop/on-the-house/drafts/permits/README.md`
+- L10 free counterparty list by email (their own record + none): **1 of 9 replied**, and it was one of the two whose own post was quoted: Joel Oine, Blue Vector, in 13 hours, "this certainly got my attention… extremely clever". The 7 picked from a database: silence. `~/Desktop/workspace/on-the-house/drafts/permits/README.md`
 - Y1 (a yes) Joel Oine, Blue Vector Bookkeeping: reply in 13 h, "extremely clever", asked what the story is
 - L14 own-quote cold email + channel pitches (their own record + obligation): pending, readout 10/13
 - L15 cold email, their own deed or post + free comp password (their own record; a gift by mistake): **1 positive reply the same day**: Tim Swierczek (TCREI podcast + meetup), a call booked for 10/15. Rest pending, read 10/19

@@ -56,7 +56,7 @@ trade pages, builds evidence and a verified map, and stops if fewer than 15 evid
 ## Run it
 
 ```bash
-uv venv .venv && VIRTUAL_ENV=.venv uv pip install anthropic   # key: ANTHROPIC_API_KEY in ~/Desktop/bricks/.env
+uv venv .venv && VIRTUAL_ENV=.venv uv pip install anthropic   # key: ANTHROPIC_API_KEY in ~/Desktop/workspace/bricks/.env
 
 # customer maps
 .venv/bin/python lab/evidence.py obsolete-parts        # -> data/evidence/<product>.jsonl
